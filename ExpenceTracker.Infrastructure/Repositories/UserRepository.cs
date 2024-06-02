@@ -1,4 +1,5 @@
 ﻿using Domain.Abstractions;
+using Domain.Exceptions;
 using Domain.Users;
 using LanguageExt.Common;
 
@@ -8,7 +9,7 @@ namespace Infrastructure.Repositories
     {
         public Result<Guid> CreateUser(User user)
         {
-            throw new NotImplementedException();
+            return new Result<Guid>(new InvalidLoginException(user.Username));
         }
 
         public Result<Guid> DeleteUser(User user)

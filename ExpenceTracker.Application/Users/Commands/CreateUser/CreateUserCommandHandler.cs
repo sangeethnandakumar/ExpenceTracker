@@ -35,7 +35,7 @@ namespace Application.Users.Commands.CreateUser
             if (createUserResult.IsFaulted)
             {
                 logger.LogDebug($"Unable to create a new user {createUserResult}");
-                return new Result<Guid>(new LoginException("Unable to create a new user"));
+                return createUserResult;
             }
 
             return createUserResult;
