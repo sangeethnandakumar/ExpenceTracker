@@ -1,4 +1,5 @@
 ﻿using Domain.Abstractions;
+using Domain.Exceptions.Base;
 using Domain.Users;
 using LanguageExt.Common;
 using MediatR;
@@ -29,9 +30,15 @@ namespace Application.Users.Commands.CreateUser
                 request.Gender
                 );
 
-            var id = userRepo.CreateUser(user);
+            var createUserResult = userRepo.CreateUser(user);
 
-            return id;
+            if (createUserResult.IsFaulted)
+            {
+                logger.LogDebug($"Unable to create a new user {createUserResult}");
+                return new Result<Guid>(new LoginException("Unable to create a new user"));
+            }
+
+            return createUserResult;
         }
     }
 }

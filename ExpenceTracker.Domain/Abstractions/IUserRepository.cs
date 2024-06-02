@@ -1,11 +1,12 @@
 ﻿using Domain.Users;
+using LanguageExt.Common;
 
 namespace Domain.Abstractions
 {
     public interface IUserRepository
     {
-        Guid CreateUser(User user);
-        Guid UpdateUser(User user);
-        Guid DeleteUser(User user);
+        Result<Guid> CreateUser(User user);
+        Result<Guid> UpdateUser(User user);
+        Result<Guid> DeleteUser(User user);
     }
 }
