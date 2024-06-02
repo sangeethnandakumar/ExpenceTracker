@@ -5,10 +5,6 @@ VisualStudioVersion = 17.10.34707.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenceTracker", "ExpenceTracker\ExpenceTracker.csproj", "{10D65E71-D479-4A57-80BA-C964594DA898}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{05906CDA-E72E-4157-B796-93C0E2D02D10}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{1D5449F5-FF81-4A7E-89C9-D2C6F7975DE5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "ExpenceTracker.Domain\Domain.csproj", "{7CCE0B79-D393-4D79-A29B-C1A5D2D87F90}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "ExpenceTracker.Application\Application.csproj", "{AE54ABF6-31CA-4F23-B756-751F0215650C}"
@@ -16,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "ExpenceTracker.Infrastructure\Infrastructure.csproj", "{48A90368-0416-48D7-B68A-835033907616}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "ExpenceTracker.Presentation\Presentation.csproj", "{F5E716DE-312A-47F1-96D7-5C0A45783DBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{7B54FC3F-E85F-47E7-BA8F-E1E5E34E3DB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,10 +46,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7CCE0B79-D393-4D79-A29B-C1A5D2D87F90} = {05906CDA-E72E-4157-B796-93C0E2D02D10}
-		{AE54ABF6-31CA-4F23-B756-751F0215650C} = {05906CDA-E72E-4157-B796-93C0E2D02D10}
-		{48A90368-0416-48D7-B68A-835033907616} = {1D5449F5-FF81-4A7E-89C9-D2C6F7975DE5}
-		{F5E716DE-312A-47F1-96D7-5C0A45783DBB} = {1D5449F5-FF81-4A7E-89C9-D2C6F7975DE5}
+		{10D65E71-D479-4A57-80BA-C964594DA898} = {7B54FC3F-E85F-47E7-BA8F-E1E5E34E3DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A3F9223-D083-4E4B-AAF7-225C83C8A77D}
