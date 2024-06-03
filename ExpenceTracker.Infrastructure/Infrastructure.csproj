@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="LanguageExt.Core" Version="4.4.8" />
+    <PackageReference Include="Twileloop.UOW.MongoDB" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>
