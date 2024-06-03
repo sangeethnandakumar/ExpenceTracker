@@ -1,5 +1,5 @@
 ﻿
-using Application.Users.Commands.CreateUser;
+using Application.Entries.Commands.CreateEntry;
 using Domain.Abstractions;
 using Infrastructure.Repositories;
 
@@ -10,10 +10,10 @@ namespace ExpenceTracker.Installers
         public void InstallService(IServiceCollection services, IConfiguration configuration)
         {
             //MediatR
-            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<CreateUserCommand>());
+            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<CreateEntryCommand>());
 
             //Dependencies
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IEntryRepository, EntryRepository>();
         }
     }
 }

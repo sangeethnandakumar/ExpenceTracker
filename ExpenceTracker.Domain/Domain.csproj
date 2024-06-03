@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Catageories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="LanguageExt.Core" Version="4.4.8" />
+    <PackageReference Include="NMoneys" Version="7.2.0" />
   </ItemGroup>
 
 </Project>
