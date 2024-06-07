@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExpenceTracker.Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\ExpenceTracker.Presentation\Presentation.csproj" />
+    <ProjectReference Include="..\Persistance\Persistance.csproj" />
   </ItemGroup>
 
 </Project>

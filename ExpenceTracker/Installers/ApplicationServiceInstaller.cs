@@ -1,7 +1,6 @@
 ﻿
 using Application.Entries.Commands.CreateEntry;
-using Domain.Abstractions;
-using Infrastructure.Repositories;
+using ExpenceTracker.Installers.Base;
 
 namespace ExpenceTracker.Installers
 {
@@ -11,9 +10,6 @@ namespace ExpenceTracker.Installers
         {
             //MediatR
             services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<CreateEntryCommand>());
-
-            //Dependencies
-            services.AddSingleton<IEntryRepository, EntryRepository>();
         }
     }
 }

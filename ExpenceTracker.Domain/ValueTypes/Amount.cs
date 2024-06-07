@@ -1,6 +1,4 @@
-﻿using NMoneys;
-
-namespace Domain.ValueTypes
+﻿namespace Domain.ValueTypes
 {
-    public record Amount(double amount, Currency currency);
+    public record Amount(double amount, string currency);
 }

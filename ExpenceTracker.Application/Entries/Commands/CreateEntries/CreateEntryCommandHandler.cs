@@ -1,41 +1,35 @@
-﻿using Domain.Abstractions;
+﻿using Application.AppDBContext;
 using Domain.Entities;
 using Domain.ValueTypes;
 using LanguageExt.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using NMoneys;
 
 namespace Application.Entries.Commands.CreateEntry
 {
     public sealed class CreateEntryCommandHandler : IRequestHandler<CreateEntryCommand, Result<Guid>>
     {
         private readonly ILogger<CreateEntryCommandHandler> logger;
-        private readonly IEntryRepository userRepo;
+        private readonly IAppDBContext dbContext;
 
-        public CreateEntryCommandHandler(ILogger<CreateEntryCommandHandler> logger, IEntryRepository userRepo)
+        public CreateEntryCommandHandler(ILogger<CreateEntryCommandHandler> logger, IAppDBContext dbContext)
         {
             this.logger = logger;
-            this.userRepo = userRepo;
+            this.dbContext = dbContext;
         }
 
         public async Task<Result<Guid>> Handle(CreateEntryCommand request, CancellationToken cancellationToken)
         {
             //Create user
             var entry = new Entry(
-                    new Amount(request.amount, Currency.Get(request.currencycode)),
+                    new Amount(request.amount, request.currencycode),
                     Guid.NewGuid()
                     );
 
-            var createEntryResult = userRepo.CreateEntry(entry);
+            var createEntryResult = await dbContext.Entries.AddAsync(entry);
+            await dbContext.SaveChangesAsync(cancellationToken);
 
-            if (createEntryResult.IsFaulted)
-            {
-                logger.LogDebug($"Unable to create a new entry {createEntryResult}");
-                return createEntryResult;
-            }
-
-            return createEntryResult;
+            return new Result<Guid>(entry.Id);
         }
     }
 }
