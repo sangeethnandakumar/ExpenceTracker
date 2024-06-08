@@ -1,4 +1,4 @@
-﻿namespace Presentation.Entry.Models
+﻿namespace Presentation.Models
 {
     public sealed record CreateCatageoryRequest
     {

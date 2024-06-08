@@ -2,11 +2,12 @@
 
 namespace Domain.Entities
 {
+
     public sealed class Catageory : Entity
     {
         public Catageory()
         {
-            
+
         }
 
         public Catageory(string name, string icon, bool isBuiltIn, string description, Guid accountId) : base(Guid.NewGuid())

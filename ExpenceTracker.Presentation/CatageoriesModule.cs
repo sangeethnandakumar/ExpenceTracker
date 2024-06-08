@@ -1,15 +1,14 @@
 ﻿using Application.Catageories.Commands.Create;
 using Application.Catageories.Queries.Get;
-using Application.Entries.Commands.Create;
 using Carter;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Presentation.Entry.Models;
+using Presentation.Models;
 
-namespace Presentation.Entry
+namespace Presentation
 {
     public sealed class CatageoriesModule : CarterModule
     {

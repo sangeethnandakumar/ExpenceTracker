@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Presentation.Entry.Models;
+using Presentation.Models;
 
-namespace Presentation.Entry
+namespace Presentation
 {
-    public sealed class EntriesModule : CarterModule
+    public sealed class UsersModule : CarterModule
     {
-        public EntriesModule() : base("entries")
+        public UsersModule() : base("users")
         {
-            WithTags("Entries");
+            WithTags("Users");
         }
 
         public override void AddRoutes(IEndpointRouteBuilder app)
