@@ -1,4 +1,4 @@
 ﻿namespace Domain.ValueTypes
 {
-    public record Amount(double amount, string currency);
+    public record Amount(double Value, string Currency);
 }

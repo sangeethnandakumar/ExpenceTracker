@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "ExpenceTrack
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "ExpenceTracker.Presentation\Presentation.csproj", "{F5E716DE-312A-47F1-96D7-5C0A45783DBB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{7B54FC3F-E85F-47E7-BA8F-E1E5E34E3DB8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "Persistance\Persistance.csproj", "{E8BDFEF8-CF5B-47F8-BBE1-290DF4E0B933}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "Persistance\Persistance.csproj", "{E8BDFEF8-CF5B-47F8-BBE1-290DF4E0B933}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,9 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{10D65E71-D479-4A57-80BA-C964594DA898} = {7B54FC3F-E85F-47E7-BA8F-E1E5E34E3DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A3F9223-D083-4E4B-AAF7-225C83C8A77D}
