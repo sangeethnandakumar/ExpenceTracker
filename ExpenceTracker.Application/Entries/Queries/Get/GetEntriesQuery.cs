@@ -2,9 +2,9 @@
 using LanguageExt.Common;
 using MediatR;
 
-namespace Application.Entries.Queries.FetchEntries
+namespace Application.Entries.Queries.Get
 {
-    public sealed record FetchEntriesQuery(
+    public sealed record GetEntriesQuery(
             DateTime startDate,
             DateTime endDate
         ) : IRequest<Result<IEnumerable<Entry>>>;

@@ -5,7 +5,7 @@ using LanguageExt.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Entries.Commands.CreateEntry
+namespace Application.Entries.Commands.Create
 {
     public sealed class CreateEntryCommandHandler : IRequestHandler<CreateEntryCommand, Result<Guid>>
     {

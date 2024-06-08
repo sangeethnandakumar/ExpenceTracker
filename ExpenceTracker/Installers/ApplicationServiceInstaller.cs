@@ -1,5 +1,4 @@
-﻿
-using Application.Entries.Commands.CreateEntry;
+﻿using Application.Entries.Commands.Create;
 using ExpenceTracker.Installers.Base;
 
 namespace ExpenceTracker.Installers
