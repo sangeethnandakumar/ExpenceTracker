@@ -21,10 +21,11 @@ namespace Application.Catageories.Commands.Create
         {
             var result = await dbContext.Catageories.AddAsync(new Catageory(
                 request.Name,
+                request.Icon,
+                request.IsBuiltIn,
                 request.Description,
-                false,
-                request.Description,
-                Guid.NewGuid()));
+                request.AccountId,
+                request.ParentCatageory));
 
             await dbContext.SaveChangesAsync(cancellationToken);
 

@@ -27,7 +27,13 @@ namespace Presentation
 
             app.MapPost("/", async (CreateEntryRequest request, IMediator mediator) =>
             {
-                var result = await mediator.Send(new CreateEntryCommand(request.Amount, request.CurrencyCode));
+                var result = await mediator.Send(new CreateEntryCommand(
+                    request.Amount,
+                    request.Note,
+                    request.CatageoryId,
+                    request.Kind,
+                    request.AccountId
+                    ));
                 return result.Match(s => Results.Ok(s), f => Results.BadRequest(f.Message));
             });
         }

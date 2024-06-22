@@ -1,6 +1,6 @@
 ﻿using Application.AppDBContext;
 using Domain.Entities;
-using Domain.ValueTypes;
+using Domain.ValueObjects;
 using LanguageExt.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -20,10 +20,12 @@ namespace Application.Entries.Commands.Create
 
         public async Task<Result<Guid>> Handle(CreateEntryCommand request, CancellationToken cancellationToken)
         {
-            //Create user
             var entry = new Entry(
-                    new Amount(request.amount, request.currencycode),
-                    Guid.NewGuid()
+                    request.Amount,
+                    request.Note,
+                    request.CatageoryId,
+                    request.Kind,
+                    request.AccountId
                     );
 
             var createEntryResult = await dbContext.Entries.AddAsync(entry);

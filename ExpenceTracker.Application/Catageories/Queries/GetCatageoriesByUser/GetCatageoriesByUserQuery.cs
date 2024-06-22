@@ -4,5 +4,5 @@ using MediatR;
 
 namespace Application.Catageories.Queries.Get
 {
-    public record GetCatageoryByIdQuery(Guid Id) : IRequest<Result<Catageory>>;
+    public record GetCatageoriesByUserQuery(Guid? AccountId) : IRequest<Result<IEnumerable<Catageory>>>;
 }

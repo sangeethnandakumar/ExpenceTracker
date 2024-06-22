@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 using Domain.Primitives;
-using Domain.ValueTypes;
+using Domain.ValueObjects;
 
 namespace Domain.Entities
 {
@@ -12,15 +12,15 @@ namespace Domain.Entities
         public EntryKind Kind { get; private set; }
         public Guid AccountId { get; private set; }
 
-        public Entry(Amount amount, Guid userId) : base(Guid.NewGuid())
+        private Entry() { }
+
+        public Entry(Amount amount, string note, Guid? catageoryId, EntryKind kind, Guid accountId) : base(Guid.NewGuid())
         {
             Amount = amount;
-            AccountId = userId;
-        }
-
-        public Entry()
-        {
-
+            Note = note;
+            CatageoryId = catageoryId;
+            Kind = kind;
+            AccountId = accountId;
         }
     }
 }

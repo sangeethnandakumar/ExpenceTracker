@@ -5,7 +5,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Catageories.Queries.Get
+namespace Application.Catageories.Queries.GetCatageoryById
 {
     public sealed class GetCatageoryByIdQueryHandler : IRequestHandler<GetCatageoryByIdQuery, Result<Catageory>>
     {

@@ -5,7 +5,10 @@ namespace Application.Catageories.Commands.Create
 {
     public record CreateCatageoryCommand(
         string Name,
-        string Description,
-        string Icon
+        string? Description,
+        string? Icon,
+        bool IsBuiltIn,
+        Guid? ParentCatageory,
+        Guid? AccountId
         ) : IRequest<Result<Guid>>;
 }
