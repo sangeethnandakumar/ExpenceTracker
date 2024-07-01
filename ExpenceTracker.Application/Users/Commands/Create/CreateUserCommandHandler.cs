@@ -35,8 +35,7 @@ namespace Application.Users.Commands.Create
                 request.Password,
                 request.DateOfBirth,
                 request.Gender,
-                request.Country,
-                request.Avatar);
+                request.Country);
 
             await dbContext.Users.AddAsync(newUser);
             await dbContext.SaveChangesAsync(cancellationToken);

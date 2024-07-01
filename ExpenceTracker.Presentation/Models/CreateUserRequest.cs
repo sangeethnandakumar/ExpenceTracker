@@ -8,7 +8,6 @@ namespace Presentation.Models
        string Email,
        LogInMode LogInMode,
        DateOnly? DateOfBirth,
-       string Avatar,
        Gender Gender,
        string Country,
        string Password

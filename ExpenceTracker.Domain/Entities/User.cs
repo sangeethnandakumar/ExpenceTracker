@@ -8,7 +8,7 @@ namespace Domain.Entities
     {
         private User() { }
 
-        public static User Create(string firstName, string lastName, string email, LogInMode loginMode, string password, DateOnly? dateOfBirth, Gender gender, string? country, string? avatar)
+        public static User Create(string firstName, string lastName, string email, LogInMode loginMode, string password, DateOnly? dateOfBirth, Gender gender, string? country)
         {
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
             return new User(
@@ -16,17 +16,15 @@ namespace Domain.Entities
                 new Credential(loginMode, email, hashedPassword),
                 dateOfBirth,
                 gender,
-                country,
-                avatar);
+                country);
         }
 
-        private User(Name name, Credential credential, DateOnly? dateOfBirth, Gender gender, string? country, string? avatar) : base(Guid.NewGuid())
+        private User(Name name, Credential credential, DateOnly? dateOfBirth, Gender gender, string? country) : base(Guid.NewGuid())
         {
             Name = name;
             Credential = credential;
             DateOfBirth = dateOfBirth;
             Gender = gender;
-            Avatar = avatar;
         }
 
         public Name Name { get; private set; }
@@ -34,6 +32,5 @@ namespace Domain.Entities
         public string? Country { get; private set; }
         public Gender Gender { get; private set; }
         public DateOnly? DateOfBirth { get; private set; }
-        public string? Avatar { get; private set; }
     }
 }

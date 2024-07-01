@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCarter();
 FindAndInstallServices(builder.Services, builder.Configuration, Assembly.GetExecutingAssembly());
 
 
