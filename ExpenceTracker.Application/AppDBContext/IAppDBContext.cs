@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.AppDBContext
@@ -10,6 +9,7 @@ namespace Application.AppDBContext
         public DbSet<Catageory> Catageories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Config> Configs { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

@@ -5,7 +5,7 @@ namespace ExpenceTracker.Installers
 {
     public sealed class PresentationServiceInstaller : IServiceInstaller
     {
-        public void InstallService(IServiceCollection services, IConfiguration configuration)
+        public void InstallService(IHostBuilder host, IServiceCollection services, IConfiguration configuration)
         {
             //Carter
             services.AddCarter();

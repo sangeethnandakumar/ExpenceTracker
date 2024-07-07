@@ -3,7 +3,6 @@ using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using System.Text.Json;
 
 namespace Persistance
 {
@@ -13,6 +12,7 @@ namespace Persistance
         public DbSet<Catageory> Catageories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Config> Configs { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)

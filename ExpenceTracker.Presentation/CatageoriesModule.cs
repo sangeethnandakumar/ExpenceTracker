@@ -11,6 +11,7 @@ using Presentation.Models;
 
 namespace Presentation
 {
+
     public sealed class CatageoriesModule : CarterModule
     {
         public CatageoriesModule() : base("catageories")

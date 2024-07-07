@@ -1,5 +1,6 @@
 ﻿namespace Presentation.Models
 {
+
     public sealed record CreateCatageoryRequest
     {
         public string? Name { get; set; }

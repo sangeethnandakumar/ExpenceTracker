@@ -2,6 +2,6 @@
 {
     public interface IServiceInstaller
     {
-        void InstallService(IServiceCollection services, IConfiguration configuration);
+        void InstallService(IHostBuilder host, IServiceCollection sevices, IConfiguration configuration);
     }
 }
