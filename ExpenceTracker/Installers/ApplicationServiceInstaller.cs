@@ -1,5 +1,4 @@
 ﻿using Application.AppDBContext;
-using Application.Entries.Commands.Create;
 using Application.MappingProfiles;
 using ExpenceTracker.Installers.Base;
 using FluentValidation;
@@ -11,7 +10,7 @@ namespace ExpenceTracker.Installers
         public void InstallService(IHostBuilder host, IServiceCollection services, IConfiguration configuration)
         {
             //MediatR
-            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<CreateEntryCommand>());
+            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<IAppDBContext>());
 
             //Automapper
             services.AddAutoMapper(typeof(MappingProfile));

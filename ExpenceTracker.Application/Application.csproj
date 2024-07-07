@@ -27,4 +27,8 @@
 		<ProjectReference Include="..\ExpenceTracker.Domain\Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Validators\" />
+	</ItemGroup>
+
 </Project>

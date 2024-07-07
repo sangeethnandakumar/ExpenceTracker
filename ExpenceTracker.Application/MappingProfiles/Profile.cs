@@ -1,6 +1,4 @@
-﻿using Application.Dtos;
-using AutoMapper;
-using Domain.Entities;
+﻿using AutoMapper;
 
 namespace Application.MappingProfiles
 {
@@ -8,9 +6,6 @@ namespace Application.MappingProfiles
     {
         public MappingProfile()
         {
-            //Employee → EmployeeDto
-            CreateMap<Employee, EmployeeDto>()
-                   .ForMember(dest => dest.Dob, opt => opt.MapFrom(src => src.Dob.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")));
         }
     }
 }
