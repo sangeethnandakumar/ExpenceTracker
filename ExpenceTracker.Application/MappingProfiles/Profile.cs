@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Application.Dtos;
+using AutoMapper;
+using Domain.Entities;
 
 namespace Application.MappingProfiles
 {
@@ -6,6 +8,10 @@ namespace Application.MappingProfiles
     {
         public MappingProfile()
         {
+            //Track → TrackDto
+            CreateMap<Track, TrackDto>()
+                   .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToString("yyyy-MM-dd")));
+
         }
     }
 }

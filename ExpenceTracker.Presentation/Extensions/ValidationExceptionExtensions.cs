@@ -19,5 +19,13 @@ namespace Presentation.Extensions
                 Errors = errors
             };
         }
+
+        public static StandardValidationError ToStandardResponse(this Exception exception)
+        {
+            return new StandardValidationError
+            {
+                Message = exception.Message
+            };
+        }
     }
 }
