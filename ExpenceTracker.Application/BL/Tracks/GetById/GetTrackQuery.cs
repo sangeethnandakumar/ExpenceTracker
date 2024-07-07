@@ -2,7 +2,7 @@
 using LanguageExt.Common;
 using MediatR;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.GetById
 {
     public sealed record GetTrackQuery(string Id) : IRequest<Result<TrackDto>>;
 }

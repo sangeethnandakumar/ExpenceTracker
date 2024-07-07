@@ -7,7 +7,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.Create
 {
     public sealed class CreateTrackCommandHandler : IRequestHandler<CreateTrackCommand, Result<Guid>>
     {

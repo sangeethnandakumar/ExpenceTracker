@@ -1,7 +1,7 @@
 ﻿using LanguageExt.Common;
 using MediatR;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.Create
 {
     public sealed record CreateTrackCommand(
           string Date,
@@ -10,4 +10,6 @@ namespace Application.BL.Tracks
           string Notes,
           string Category
     ) : IRequest<Result<Guid>>;
+
+
 }

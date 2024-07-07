@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.GetById
 {
     public sealed class GetTrackQueryHandler : IRequestHandler<GetTrackQuery, Result<TrackDto>>
     {
@@ -43,7 +43,7 @@ namespace Application.BL.Tracks
 
             //Proceed
             var queryResult = await dbContext.Tracks.FirstOrDefaultAsync(x => x.Id == Guid.Parse(request.Id));
-            if(queryResult is null)
+            if (queryResult is null)
             {
                 logger.LogInformation("No data found for id: {@Id}", request.Id);
                 return new Result<TrackDto>(new DataException($"No data found for id: {request.Id}"));

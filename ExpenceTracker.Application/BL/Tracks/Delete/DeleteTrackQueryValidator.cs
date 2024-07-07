@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.Delete
 {
-    public sealed class GetTrackQueryValidator : AbstractValidator<GetTrackQuery>
+    public sealed class DeleteTrackQueryValidator : AbstractValidator<DeleteTrackCommand>
     {
-        public GetTrackQueryValidator()
+        public DeleteTrackQueryValidator()
         {
             RuleFor(x => x.Id)
                 .NotEmpty().WithMessage("Is required.")

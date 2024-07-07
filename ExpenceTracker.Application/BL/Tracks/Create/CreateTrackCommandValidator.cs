@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
 using System.Globalization;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.Create
 {
+
     public sealed class CreateTrackCommandValidator : AbstractValidator<CreateTrackCommand>
     {
         public CreateTrackCommandValidator()

@@ -8,7 +8,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.BL.Tracks
+namespace Application.BL.Tracks.GetAll
 {
     public sealed class GetTracksQueryHandler : IRequestHandler<GetTracksQuery, Result<IEnumerable<TrackDto>>>
     {

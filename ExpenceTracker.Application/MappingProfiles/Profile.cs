@@ -1,4 +1,5 @@
-﻿using Application.Dtos;
+﻿using Application.BL.Tracks.Update;
+using Application.Dtos;
 using AutoMapper;
 using Domain.Entities;
 
@@ -8,7 +9,8 @@ namespace Application.MappingProfiles
     {
         public MappingProfile()
         {
-            //Track → TrackDto
+            //Track
+            CreateMap<UpdateTrackCommand, Track>();
             CreateMap<Track, TrackDto>()
                    .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToString("yyyy-MM-dd")));
 

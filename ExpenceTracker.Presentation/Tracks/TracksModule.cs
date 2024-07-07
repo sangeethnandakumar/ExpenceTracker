@@ -22,33 +22,34 @@ namespace Presentation.Tracks
         public override void AddRoutes(IEndpointRouteBuilder app)
         {
             //GET
-            app.MapGet("/", async (IMediator mediator, [FromQuery] string id = null) =>
+            app.MapGet("/", async (IMediator mediator) =>
             {
-                if (id is not null)
-                {
-                    var result = await mediator.Send(new GetTrackQuery(id));
-                    return result.Match(
-                        s => Results.Ok(s),
-                        f => f switch
-                        {
-                            ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
-                            DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
-                            _ => Results.UnprocessableEntity(f.Message)
-                        });
-                }
-                else
-                {
-                    var result = await mediator.Send(new GetTracksQuery());
-                    return result.Match(
-                        s => Results.Ok(s),
-                        f => f switch
-                        {
-                            ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
-                            DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
-                            _ => Results.UnprocessableEntity(f.Message)
-                        });
-                }
+                var result = await mediator.Send(new GetTracksQuery());
+                return result.Match(
+                    s => Results.Ok(s),
+                    f => f switch
+                    {
+                        ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
+                        DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
+                        _ => Results.UnprocessableEntity(f.Message)
+                    });
             });
+
+
+            //GET
+            app.MapGet("/{id}", async ([FromRoute] string id, IMediator mediator) =>
+            {
+                var result = await mediator.Send(new GetTrackQuery(id));
+                return result.Match(
+                    s => Results.Ok(s),
+                    f => f switch
+                    {
+                        ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
+                        DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
+                        _ => Results.UnprocessableEntity(f.Message)
+                    });
+            });
+
 
             //POST
             app.MapPost("/", async (CreateTrackRequest request, IMediator mediator) =>
@@ -60,6 +61,44 @@ namespace Presentation.Tracks
                         request.Notes,
                         request.Category
                 ));
+
+                return result.Match(
+                        s => Results.Ok(s),
+                        f => f switch
+                        {
+                            ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
+                            DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
+                            _ => Results.UnprocessableEntity(f.Message)
+                        });
+            });
+
+            //PUT
+            app.MapPut("/{id}", async ([FromRoute] string id, UpdateTrackRequest request, IMediator mediator) =>
+            {
+                var result = await mediator.Send(new UpdateTrackCommand(
+                        id,
+                        request.Date,
+                        request.Exp,
+                        request.Inc,
+                        request.Notes,
+                        request.Category
+                ));
+
+                return result.Match(
+                        s => Results.Ok(s),
+                        f => f switch
+                        {
+                            ValidationException validationException => Results.BadRequest(validationException.ToStandardResponse()),
+                            DataException anotherException => Results.NotFound(anotherException.ToStandardResponse()),
+                            _ => Results.UnprocessableEntity(f.Message)
+                        });
+            });
+
+
+            //DELETE
+            app.MapDelete("/{id}", async ([FromRoute] string id, IMediator mediator) =>
+            {
+                var result = await mediator.Send(new DeleteTrackCommand(id));
 
                 return result.Match(
                         s => Results.Ok(s),
