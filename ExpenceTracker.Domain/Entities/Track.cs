@@ -2,6 +2,7 @@
 
 namespace Domain.Entities
 {
+
     public sealed class Track : Entity
     {
         //Private Contructor for EFCore

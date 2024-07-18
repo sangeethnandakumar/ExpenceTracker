@@ -1,4 +1,8 @@
-﻿using Application.BL.Tracks;
+﻿using Application.BL.Tracks.Create;
+using Application.BL.Tracks.Delete;
+using Application.BL.Tracks.GetAll;
+using Application.BL.Tracks.GetById;
+using Application.BL.Tracks.Update;
 using Carter;
 using FluentValidation;
 using MediatR;
@@ -10,8 +14,9 @@ using Presentation.Extensions;
 using Presentation.Models;
 using System.Data;
 
-namespace Presentation.Tracks
+namespace Presentation.Modules
 {
+
     public sealed class TracksModule : CarterModule
     {
         public TracksModule() : base("tracks")

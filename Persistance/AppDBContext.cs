@@ -7,6 +7,7 @@ namespace Persistance
     public class AppDBContext : DbContext, IAppDBContext
     {
         public DbSet<Track> Tracks { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
