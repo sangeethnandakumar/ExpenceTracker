@@ -15,9 +15,9 @@ env:
   PROJECT_PATH         : './ExpenceTracker/ExpenceTracker.csproj'
   HOST_VOLUME_PATH     : '/docker_volumes/expensetracker.twileloop.com'
   DOCKER_ENVS: > 
-    ConnectionStrings__TrackerDB = ${{ secrets.TRACKERDB }}
-    ConnectionStrings__Redis = ${{ secrets.REDIS }}
-    ConnectionStrings__Seq = ${{ secrets.SEQ }}
+    ConnectionStrings__TrackerDB=${{ secrets.TRACKERDB }}
+    ConnectionStrings__Redis=${{ secrets.REDIS }}
+    ConnectionStrings__Seq=${{ secrets.SEQ }}
    
   # Dotnet Config
   DOTNET_VERSION       : '8.0.101'
