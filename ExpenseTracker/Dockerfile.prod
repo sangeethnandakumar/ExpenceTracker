@@ -1,6 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy-chiseled   AS base
 EXPOSE 8080
 FROM base AS final
 WORKDIR /app
+
+COPY ../../publish/ .
+RUN mkdir -p Shared
 
 ENTRYPOINT ["dotnet", "ExpenseTracker.dll"]
