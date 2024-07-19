@@ -12,11 +12,8 @@ DiscoverAndInstallDependencies(builder.Host, builder.Services, builder.Configura
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
