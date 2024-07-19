@@ -11,8 +11,8 @@ env:
   IMAGE_NAME           : 'expensetracker.twileloop.com'
   NGINX_DOMAIN         : 'expensetracker.twileloop.com'
   SERVER_PORT          : 6000
-  DOCKER_FILE_LOCATION : './ExpenceTracker' 
-  PROJECT_PATH         : './ExpenceTracker/ExpenceTracker.csproj'
+  DOCKER_FILE_LOCATION : './ExpenseTracker' 
+  PROJECT_PATH         : './ExpenseTracker/ExpenseTracker.csproj'
   HOST_VOLUME_PATH     : '/docker_volumes/expensetracker.twileloop.com'
   DOCKER_ENVS: > 
     ConnectionStrings__TrackerDB=${{ secrets.TRACKERDB }}
