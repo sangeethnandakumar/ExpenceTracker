@@ -1,7 +1,7 @@
 ﻿using Carter;
-using ExpenceTracker.Installers.Base;
+using ExpenseTracker.Installers.Base;
 
-namespace ExpenceTracker.Installers
+namespace ExpenseTracker.Installers
 {
     public sealed class PresentationServiceInstaller : IServiceInstaller
     {

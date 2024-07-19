@@ -1,9 +1,9 @@
 ﻿using Application.AppDBContext;
-using ExpenceTracker.Installers.Base;
+using ExpenseTracker.Installers.Base;
 using Microsoft.EntityFrameworkCore;
 using Persistance;
 
-namespace ExpenceTracker.Installers
+namespace ExpenseTracker.Installers
 {
     public sealed class PersistanceServiceInstaller : IServiceInstaller
     {

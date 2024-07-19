@@ -24,7 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\ExpenceTracker.Domain\Domain.csproj" />
+		<ProjectReference Include="..\ExpenseTracker.Domain\Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

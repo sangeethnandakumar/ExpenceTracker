@@ -1,15 +1,14 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34707.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenceTracker", "ExpenceTracker\ExpenceTracker.csproj", "{10D65E71-D479-4A57-80BA-C964594DA898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTracker", "ExpenseTracker\ExpenseTracker.csproj", "{10D65E71-D479-4A57-80BA-C964594DA898}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "ExpenceTracker.Domain\Domain.csproj", "{7CCE0B79-D393-4D79-A29B-C1A5D2D87F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "ExpenseTracker.Domain\Domain.csproj", "{7CCE0B79-D393-4D79-A29B-C1A5D2D87F90}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "ExpenceTracker.Application\Application.csproj", "{AE54ABF6-31CA-4F23-B756-751F0215650C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "ExpenseTracker.Application\Application.csproj", "{AE54ABF6-31CA-4F23-B756-751F0215650C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "ExpenceTracker.Presentation\Presentation.csproj", "{F5E716DE-312A-47F1-96D7-5C0A45783DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "ExpenseTracker.Presentation\Presentation.csproj", "{F5E716DE-312A-47F1-96D7-5C0A45783DBB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "Persistance\Persistance.csproj", "{E8BDFEF8-CF5B-47F8-BBE1-290DF4E0B933}"
 EndProject

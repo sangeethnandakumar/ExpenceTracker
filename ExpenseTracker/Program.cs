@@ -1,5 +1,5 @@
 using Carter;
-using ExpenceTracker.Installers.Base;
+using ExpenseTracker.Installers.Base;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

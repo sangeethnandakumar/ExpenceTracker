@@ -1,4 +1,4 @@
-﻿namespace ExpenceTracker.Installers.Base
+﻿namespace ExpenseTracker.Installers.Base
 {
     public interface IServiceInstaller
     {

@@ -1,8 +1,8 @@
-﻿using ExpenceTracker.Installers.Base;
+﻿using ExpenseTracker.Installers.Base;
 using Serilog;
 using Serilog.Filters;
 
-namespace ExpenceTracker.Installers
+namespace ExpenseTracker.Installers
 {
     public sealed class ApiServiceInstaller : IServiceInstaller
     {

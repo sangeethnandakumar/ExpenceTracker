@@ -1,9 +1,9 @@
 ﻿using Application.AppDBContext;
 using Application.MappingProfiles;
-using ExpenceTracker.Installers.Base;
+using ExpenseTracker.Installers.Base;
 using FluentValidation;
 
-namespace ExpenceTracker.Installers
+namespace ExpenseTracker.Installers
 {
     public sealed class ApplicationServiceInstaller : IServiceInstaller
     {
