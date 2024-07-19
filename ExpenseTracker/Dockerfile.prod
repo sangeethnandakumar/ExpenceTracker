@@ -4,6 +4,5 @@ FROM base AS final
 WORKDIR /app
 
 COPY ../../publish/ .
-RUN mkdir -p Shared
 
 ENTRYPOINT ["dotnet", "ExpenseTracker.dll"]
