@@ -1,6 +1,9 @@
-﻿using ExpenseTracker.Installers.Base;
+﻿using ExpenseTracker.Converters;
+using ExpenseTracker.Installers.Base;
 using Serilog;
 using Serilog.Filters;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace ExpenseTracker.Installers
 {
@@ -35,6 +38,15 @@ namespace ExpenseTracker.Installers
                         .AllowAnyMethod()
                         .AllowAnyHeader();
                     });
+            });
+
+            //JSON
+            services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+                options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+                options.SerializerOptions.Converters.Add(new ISO8601DateTimeConverter());
             });
         }
     }

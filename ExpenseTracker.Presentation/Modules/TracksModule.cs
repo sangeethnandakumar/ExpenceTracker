@@ -60,7 +60,6 @@ namespace Presentation.Modules
             app.MapPost("/", async (CreateTrackRequest request, IMediator mediator) =>
             {
                 var result = await mediator.Send(new CreateTrackCommand(
-                        request.Date,
                         request.Exp,
                         request.Inc,
                         request.Notes,

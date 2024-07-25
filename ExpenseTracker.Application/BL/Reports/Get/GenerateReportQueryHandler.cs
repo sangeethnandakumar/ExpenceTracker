@@ -1,4 +1,5 @@
 ﻿using Application.AppDBContext;
+using Application.Constants;
 using Application.Dtos;
 using Application.Extenions;
 using AutoMapper;
@@ -7,6 +8,7 @@ using LanguageExt.Common;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 
 namespace Application.BL.Reports.Get
 {
@@ -28,6 +30,12 @@ namespace Application.BL.Reports.Get
 
         public async Task<Result<ReportDto>> Handle(GenerateReportQuery request, CancellationToken cancellationToken)
         {
+            //Defaulting
+            if (request.End is null)
+            {
+                request.End = DateTime.UtcNow.ToString(ValidatorConstants.DATE_FORMAT, CultureInfo.InvariantCulture);
+            }
+
             //Validate
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)

@@ -4,5 +4,9 @@ using MediatR;
 
 namespace Application.BL.Reports.Get
 {
-    public sealed record GenerateReportQuery(string Start, string End) : IRequest<Result<ReportDto>>;
+    public sealed class GenerateReportQuery : IRequest<Result<ReportDto>>
+    {
+        public string Start { get; set; }
+        public string End { get; set; }
+    }
 }

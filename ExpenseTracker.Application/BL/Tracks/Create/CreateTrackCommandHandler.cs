@@ -35,7 +35,7 @@ namespace Application.BL.Tracks.Create
 
             //Create
             var result = await dbContext.Tracks.AddAsync(new Track(
-                  DateTime.ParseExact(request.Date, "yyyy-MM-ddTHH:mm:ss.fffZ", CultureInfo.InvariantCulture, DateTimeStyles.None),
+                  DateTime.UtcNow,
                   request.Exp,
                   request.Inc,
                   request.Notes,

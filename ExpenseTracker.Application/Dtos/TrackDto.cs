@@ -2,7 +2,7 @@
 {
     public sealed record TrackDto(
           Guid Id,
-          string Date,
+          DateTime Date,
           int Exp,
           int Inc,
           string Notes,

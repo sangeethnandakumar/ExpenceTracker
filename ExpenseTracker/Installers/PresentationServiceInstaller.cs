@@ -7,9 +7,6 @@ namespace ExpenseTracker.Installers
     {
         public void InstallService(IHostBuilder host, IServiceCollection services, IConfiguration configuration)
         {
-            //Carter
-            services.AddCarter();
-
             //Redis Cache
             var redisConnectionString = configuration.GetConnectionString("Redis");
             services.AddStackExchangeRedisCache(options =>
@@ -17,6 +14,9 @@ namespace ExpenseTracker.Installers
                 options.Configuration = redisConnectionString;
                 options.InstanceName = "TrackerCache";
             });
+
+            //Carter
+            services.AddCarter();
         }
     }
 }

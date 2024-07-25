@@ -37,7 +37,6 @@ namespace Application.BL.Tracks.GetAll
                 return new Result<IEnumerable<TrackDto>>(new ValidationException(validationResult.Errors));
             }
 
-
             //Proceed
             var queryResult = await dbContext.Tracks.ToListAsync();
             var result = mapper.Map<IEnumerable<TrackDto>>(queryResult);

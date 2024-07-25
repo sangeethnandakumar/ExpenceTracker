@@ -1,5 +1,6 @@
 ﻿using Application.BL.Categories.Update;
 using Application.BL.Tracks.Update;
+using Application.Constants;
 using Application.Dtos;
 using AutoMapper;
 using Domain.Entities;
@@ -12,18 +13,14 @@ namespace Application.MappingProfiles
         {
             //Track
             CreateMap<UpdateTrackCommand, Track>();
-            CreateMap<Track, TrackDto>()
-                   .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToString("yyyy-MM-dd")));
+            CreateMap<Track, TrackDto>();
 
             //Category
             CreateMap<UpdateCategoryCommand, Category>();
             CreateMap<Category, CategoryDto>();
 
             //Report
-            CreateMap<Report, ReportDto>()
-                   .ForMember(dest => dest.Start, opt => opt.MapFrom(src => src.Start.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")))
-                   .ForMember(dest => dest.End, opt => opt.MapFrom(src => src.End.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")));
-
+            CreateMap<Report, ReportDto>();
         }
     }
 }

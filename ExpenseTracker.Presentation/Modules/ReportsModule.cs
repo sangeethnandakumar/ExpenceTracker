@@ -4,7 +4,6 @@ using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Presentation.Extensions;
 using Presentation.Models;
@@ -24,10 +23,11 @@ namespace Presentation.Modules
             //POST
             app.MapPost("/", async (GenerateReportRequest request, IMediator mediator) =>
             {
-                var result = await mediator.Send(new GenerateReportQuery(
-                    request.Start,
-                    request.End
-                ));
+                var result = await mediator.Send(new GenerateReportQuery
+                {
+                    Start = request.Start,
+                    End = request.End
+                });
 
                 return result.Match(
                         s => Results.Ok(s),
