@@ -18,7 +18,6 @@ namespace Application.BL.Reports.Get
                  .NotEmpty().WithMessage("Is required.")
                  .Must(BeAValidDate()).WithMessage("Must be a valid date in " + ValidatorConstants.DATE_FORMAT_NAME + " (" + ValidatorConstants.DATE_FORMAT + ") format.");
 
-
             RuleFor(x => x)
                .Must(BeUnderLimitedRange)
                .WithName("Start & End")
