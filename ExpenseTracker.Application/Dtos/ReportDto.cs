@@ -2,8 +2,8 @@
 {
     public class ReportDto
     {
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
         public int Total { get; set; }
         public Dictionary<Guid, ReportCategoryBreakdown> Breakdown { get; set; }
     }

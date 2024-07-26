@@ -27,9 +27,13 @@ namespace Presentation.Modules
         public override void AddRoutes(IEndpointRouteBuilder app)
         {
             //GET
-            app.MapGet("/", async (IMediator mediator) =>
+            app.MapGet("/", async ([FromQuery] string? start, [FromQuery] string? end, IMediator mediator) =>
             {
-                var result = await mediator.Send(new GetTracksQuery());
+                var result = await mediator.Send(new GetTracksQuery
+                {
+                    Start = start,
+                    End = end
+                });
                 return result.Match(
                     s => Results.Ok(s),
                     f => f switch

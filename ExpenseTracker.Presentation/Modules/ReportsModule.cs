@@ -4,6 +4,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Presentation.Extensions;
 using Presentation.Models;
@@ -21,12 +22,12 @@ namespace Presentation.Modules
         public override void AddRoutes(IEndpointRouteBuilder app)
         {
             //POST
-            app.MapPost("/", async (GenerateReportRequest request, IMediator mediator) =>
+            app.MapGet("/", async ([FromQuery] string? start, [FromQuery] string? end, IMediator mediator) =>
             {
                 var result = await mediator.Send(new GenerateReportQuery
                 {
-                    Start = request.Start,
-                    End = request.End
+                    Start = start,
+                    End = end
                 });
 
                 return result.Match(

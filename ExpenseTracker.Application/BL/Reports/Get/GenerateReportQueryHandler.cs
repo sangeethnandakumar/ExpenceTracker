@@ -75,8 +75,8 @@ namespace Application.BL.Reports.Get
 
             var result = new ReportDto
             {
-                Start = DateTime.Parse(request.Start),
-                End = DateTime.Parse(request.Start),
+                Start = request.Start,
+                End = request.End,
                 Breakdown = dictionary,
                 Total = dictionary.Sum(x=>x.Value.Total)
             };

@@ -4,5 +4,9 @@ using MediatR;
 
 namespace Application.BL.Tracks.GetAll
 {
-    public sealed record GetTracksQuery() : IRequest<Result<IEnumerable<TrackDto>>>;
+    public sealed class GetTracksQuery : IRequest<Result<IEnumerable<TrackDto>>>
+    {
+        public string Start { get; set; }
+        public string End { get; set; }
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.AppDBContext;
+using Application.Constants;
 using Application.Dtos;
 using Application.Extenions;
 using AutoMapper;
@@ -7,6 +8,7 @@ using LanguageExt.Common;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 
 namespace Application.BL.Tracks.GetAll
 {
@@ -28,9 +30,11 @@ namespace Application.BL.Tracks.GetAll
 
         public async Task<Result<IEnumerable<TrackDto>>> Handle(GetTracksQuery request, CancellationToken cancellationToken)
         {
+            //Defaulting
+            Defaulting(request);
+
             //Validate
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
-
             if (!validationResult.IsValid)
             {
                 logger.LogInformation("Validation errors: {@ValidationErrors}", validationResult.ToStandardDictionary());
@@ -38,11 +42,25 @@ namespace Application.BL.Tracks.GetAll
             }
 
             //Proceed
-            var queryResult = await dbContext.Tracks.ToListAsync();
+            var queryResult = await dbContext.Tracks.Where(x =>
+                x.Date <= DateTime.Parse(request.End) && x.Date >= DateTime.Parse(request.Start)
+            ).ToListAsync();
             var result = mapper.Map<IEnumerable<TrackDto>>(queryResult);
 
             //Complete
             return new Result<IEnumerable<TrackDto>>(result);
+        }
+
+        private static void Defaulting(GetTracksQuery request)
+        {
+            if (string.IsNullOrEmpty(request.Start))
+            {
+                request.Start = DateTime.MinValue.ToString(ValidatorConstants.DATE_FORMAT, CultureInfo.InvariantCulture);
+            }
+            if (string.IsNullOrEmpty(request.End))
+            {
+                request.End = DateTime.UtcNow.ToString(ValidatorConstants.DATE_FORMAT, CultureInfo.InvariantCulture);
+            }
         }
     }
 }
