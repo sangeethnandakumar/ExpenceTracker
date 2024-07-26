@@ -44,7 +44,7 @@ namespace Application.BL.Tracks.GetAll
             //Proceed
             var queryResult = await dbContext.Tracks.Where(x =>
                 x.Date <= DateTime.Parse(request.End) && x.Date >= DateTime.Parse(request.Start)
-            ).ToListAsync();
+            ).OrderBy(x=>x.Date).ToListAsync();
             var result = mapper.Map<IEnumerable<TrackDto>>(queryResult);
 
             //Complete
