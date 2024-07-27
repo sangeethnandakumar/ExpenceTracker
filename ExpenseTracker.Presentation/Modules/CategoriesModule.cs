@@ -64,8 +64,9 @@ namespace Presentation.Modules
                 var result = await mediator.Send(new CreateCategoryCommand(
                     request.Title,
                     request.Text,
-                    request.Sub,
-                    request.Icon
+                    request.Icon,
+                    request.Color,
+                    request.CustomImage
                 ));
 
                 return result.Match(
@@ -85,8 +86,9 @@ namespace Presentation.Modules
                     id,
                     request.Title,
                     request.Text,
-                    request.Sub,
-                    request.Icon
+                    request.Icon,
+                    request.Color,
+                    request.CustomImage
                 ));
 
                 return result.Match(

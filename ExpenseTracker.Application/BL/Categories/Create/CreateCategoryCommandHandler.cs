@@ -35,8 +35,9 @@ namespace Application.BL.Categories.Create
             var result = await dbContext.Categories.AddAsync(new Category(
                   request.Title,
                   request.Text,
-                  request.Sub != null ? Guid.Parse(request.Sub) : null,
-                  request.Icon
+                  request.Icon,
+                  request.Color,
+                  request.CustomImage
             ));
             await dbContext.SaveChangesAsync(cancellationToken);
 

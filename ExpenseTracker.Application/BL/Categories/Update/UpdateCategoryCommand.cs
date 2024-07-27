@@ -7,7 +7,8 @@ namespace Application.BL.Categories.Update
       string Id,
       string Title,
       string Text,
-      string Sub,
-      string Icon
+      string Icon,
+      string Color,
+      string CustomImage
 ) : IRequest<Result<Guid>>;
 }

@@ -8,18 +8,20 @@ namespace Domain.Entities
         private Category() { }
 
         //Contructor
-        public Category(string title, string text, Guid? sub, string icon) : base(Guid.NewGuid())
+        public Category(string title, string text, string icon, string color, string customImage) : base(Guid.NewGuid())
         {
             Title = title;
             Text = text;
-            Sub = sub;
             Icon = icon;
+            Color = color;
+            CustomImage = customImage;
         }
 
         //Immutable Props
         public string Title { get; private set; }
         public string Text { get; private set; }
-        public Guid? Sub { get; private set; }
-        public string Icon { get; private set; }
+        public string? Icon { get; private set; }
+        public string Color { get; private set; }
+        public string CustomImage { get; private set; }
     }
 }
