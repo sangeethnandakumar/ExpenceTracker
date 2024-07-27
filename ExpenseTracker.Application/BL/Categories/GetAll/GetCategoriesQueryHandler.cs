@@ -50,15 +50,14 @@ namespace Application.BL.Categories.GetAll
                 .Select(g => g.CategoryId)
                 .ToList();
 
-            // Fetch categories
-            var categories = await dbContext.Categories
-                .Where(c => recentCategoryIds.Contains(c.Id))
-                .ToListAsync();
+            // Fetch all categories
+            var allCategories = await dbContext.Categories.ToListAsync();
 
-            // Sort categories by recent usage
-            var sortedCategories = categories
-                .OrderBy(c => recentCategoryIds.IndexOf(c.Id))
+            // Sort categories by recent usage, putting categories without tracks last
+            var sortedCategories = allCategories
+                .OrderBy(c => recentCategoryIds.IndexOf(c.Id) == -1 ? int.MaxValue : recentCategoryIds.IndexOf(c.Id))
                 .ToList();
+
 
             // Map to DTOs
             var result = mapper.Map<IEnumerable<CategoryDto>>(sortedCategories);
