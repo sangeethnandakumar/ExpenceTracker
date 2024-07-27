@@ -19,8 +19,12 @@ namespace Application.BL.Categories.Create
 
             RuleFor(x => x.Color)
                     .NotEmpty().WithMessage("Is required.");
-            RuleFor(x => x.CustomImage)
+
+            When(x => string.IsNullOrEmpty(x.Icon), () =>
+            {
+                RuleFor(x => x.CustomImage)
                     .NotEmpty().WithMessage("Is required.");
+            });
         }
     }
 }
