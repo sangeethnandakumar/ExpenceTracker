@@ -37,9 +37,31 @@ namespace Application.BL.Categories.GetAll
                 return new Result<IEnumerable<CategoryDto>>(new ValidationException(validationResult.Errors));
             }
 
-            //Proceed
-            var queryResult = await dbContext.Categories.ToListAsync();
-            var result = mapper.Map<IEnumerable<CategoryDto>>(queryResult);
+            // Fetch tracks into memory
+            var tracks = await dbContext.Tracks
+                .OrderByDescending(t => t.Date)
+                .ToListAsync();
+
+            // Group by category and order by most recent usage
+            var recentCategoryIds = tracks
+                .GroupBy(t => t.Category)
+                .Select(g => new { CategoryId = g.Key, LastUsed = g.Max(t => t.Date) })
+                .OrderByDescending(g => g.LastUsed)
+                .Select(g => g.CategoryId)
+                .ToList();
+
+            // Fetch categories
+            var categories = await dbContext.Categories
+                .Where(c => recentCategoryIds.Contains(c.Id))
+                .ToListAsync();
+
+            // Sort categories by recent usage
+            var sortedCategories = categories
+                .OrderBy(c => recentCategoryIds.IndexOf(c.Id))
+                .ToList();
+
+            // Map to DTOs
+            var result = mapper.Map<IEnumerable<CategoryDto>>(sortedCategories);
 
             //Complete
             return new Result<IEnumerable<CategoryDto>>(result);
