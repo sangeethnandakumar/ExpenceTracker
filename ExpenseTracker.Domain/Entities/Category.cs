@@ -22,6 +22,6 @@ namespace Domain.Entities
         public string Text { get; private set; }
         public string? Icon { get; private set; }
         public string Color { get; private set; }
-        public string CustomImage { get; private set; }
+        public string? CustomImage { get; private set; }
     }
 }
