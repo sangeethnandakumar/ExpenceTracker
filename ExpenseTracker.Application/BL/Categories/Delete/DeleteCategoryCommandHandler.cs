@@ -41,8 +41,11 @@ namespace Application.BL.Categories.Delete
                 return new Result<Guid>(new DataException($"No data found for id: {request.Id}"));
             }
 
-            //Delete
+            //Delete            
+            var associatedTracks = await dbContext.Tracks.Where(x=>x.Category == entityToDelete.Id).ToListAsync();
             var result = dbContext.Categories.Remove(entityToDelete);
+            dbContext.Tracks.RemoveRange(associatedTracks);
+
             await dbContext.SaveChangesAsync(cancellationToken);
 
             //Complete
