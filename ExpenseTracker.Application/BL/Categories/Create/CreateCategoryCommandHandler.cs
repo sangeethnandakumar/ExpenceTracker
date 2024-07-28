@@ -44,7 +44,7 @@ namespace Application.BL.Categories.Create
             try
             {
                 var imageBytes = DecodeBase64Image(customImage);
-                var compressedImageData = await ImageProcessingHelper.CompressImageAsync(imageBytes, 32, 4, SixLabors.ImageSharp.Formats.Png.PngBitDepth.Bit4);
+                var compressedImageData = await ImageProcessingHelper.CompressImageAsync(imageBytes, 32, 4, SixLabors.ImageSharp.Formats.Png.PngBitDepth.Bit8);
 
                 // Create and save compressed image
                 var compressedImage = new CompressedImage(Guid.NewGuid().ToString(), compressedImageData);
