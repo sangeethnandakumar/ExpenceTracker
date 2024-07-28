@@ -25,3 +25,4 @@ The API load testing has been done using K6 with the server capable of serving 1
 The architecture of the entire setup utilizes microservices while part of the components are hosted in Azure. 
 
 ## Backend Microservice Architecture
+![Expence Tracker v1 Service Architecture drawio](https://github.com/user-attachments/assets/85cff855-3150-4ae2-a3e8-d1e383dfc3be)
