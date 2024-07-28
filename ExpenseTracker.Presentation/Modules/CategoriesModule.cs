@@ -19,6 +19,7 @@ using System.Data;
 
 namespace Presentation.Modules
 {
+
     public sealed class CategoriesModule : CarterModule
     {
         public CategoriesModule() : base("categories")

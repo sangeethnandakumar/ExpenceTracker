@@ -7,6 +7,7 @@ namespace Application.AppDBContext
     {
         public DbSet<Track> Tracks { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<CompressedImage> Images { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
