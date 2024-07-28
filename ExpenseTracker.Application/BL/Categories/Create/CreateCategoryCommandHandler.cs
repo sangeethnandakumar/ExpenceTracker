@@ -31,11 +31,34 @@ namespace Application.BL.Categories.Create
                 return new Result<Guid>(new ValidationException(validationResult.Errors));
             }
 
-            // Decode and compress the image
-            var compressedImageId = await ProcessImageAsync(request.CustomImage, cancellationToken);
+            if(request.CustomImage is not null)
+            {
+                // Decode and compress the image
+                var compressedImageId = await ProcessImageAsync(request.CustomImage, cancellationToken);
+                // Create and save category
+                return await CreateCategoryWithImageAsync(request, compressedImageId, cancellationToken);
+            }
+            else
+            {
+                // Create and save category
+                return await CreateCategoryWithIconAsync(request, cancellationToken);
+            }
+        }
 
-            // Create and save category
-            return await CreateCategoryAsync(request, compressedImageId, cancellationToken);
+        private async Task<Result<Guid>> CreateCategoryWithIconAsync(CreateCategoryCommand request, CancellationToken cancellationToken)
+        {
+            var category = new Category(
+                 request.Title,
+                 request.Icon,
+                 request.Color,
+                 null
+             );
+
+            // Add category to the database
+            await dbContext.Categories.AddAsync(category, cancellationToken);
+            await dbContext.SaveChangesAsync(cancellationToken);
+
+            return new Result<Guid>(category.Id);
         }
 
         private async Task<string> ProcessImageAsync(string customImage, CancellationToken cancellationToken)
@@ -66,11 +89,11 @@ namespace Application.BL.Categories.Create
             return Convert.FromBase64String(base64Data.ToString());
         }
 
-        private async Task<Result<Guid>> CreateCategoryAsync(CreateCategoryCommand request, string compressedImageId, CancellationToken cancellationToken)
+        private async Task<Result<Guid>> CreateCategoryWithImageAsync(CreateCategoryCommand request, string compressedImageId, CancellationToken cancellationToken)
         {
             var category = new Category(
                 request.Title,
-                request.Icon,
+                null,
                 request.Color,
                 compressedImageId
             );
