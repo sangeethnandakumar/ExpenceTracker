@@ -1,28 +1,88 @@
-# FrontEnd
-Web and mobile frontends are currenty planned. The web will be a React based SPA and mobile app will be build on Flutter
+# Expense Tracker Project
 
-## Flutter Mobile App (Android & iOS)
+## Overview
+This repository contains a comprehensive expense tracking solution developed as a hobby project. It demonstrates proficiency in full-stack development, cloud services integration, and microservices architecture.
 
-### 1. Track Page
-![WhatsApp Image 2024-07-28 at 20 56 57_3fb871e4](https://github.com/user-attachments/assets/705c16b9-b3bc-400a-b2e2-1c2ce37e8bf7)
+## Technology Stack
 
-### 2. Records Page
-![WhatsApp Image 2024-07-28 at 20 56 58_bc640cca](https://github.com/user-attachments/assets/2a6c71f0-e237-4f0a-9440-b27f5308b39b)
+### Frontend
+1. Web Application
+   - Framework: React
+   - Type: Single Page Application (SPA)
 
-### 3. Categry Edit Page
-![WhatsApp Image 2024-07-28 at 20 56 58_86b32f16](https://github.com/user-attachments/assets/9232e4e3-3b9d-4aa4-b289-6cdc3cc33824)
+2. Mobile Application
+   - Framework: Flutter
+   - Platforms: Android & iOS
 
-### 4. Category Create Page
-![WhatsApp Image 2024-07-28 at 20 56 58_34cb92b4](https://github.com/user-attachments/assets/05d75eb1-95fc-4301-ad5e-399fda0e2f87)
+   Key Features:
+   - Track Page: Real-time expense entry and visualization
+   - Records Page: Historical data display and analysis
+   - Category Edit Page: Dynamic expense categorization
+   - Category Create Page: Custom category management
 
-# BackEnd
-Backend is powered by .NET 9 running on a Chiselled Ubuntu container (Alpine) running on Docker inside my Linux server connected to MongoDB for data persistance. Additionaly Redisis used for distributed caching, Seq for logs and tracing (Open telemetry integrated), Promethius and Grafana is also integrated for motinoting net traffic.
+### Backend
+- Core Framework: .NET 9
+- Containerization: Docker (Chiselled Ubuntu container on Alpine)
+- Database: MongoDB (primary data storage)
+- Caching: Redis (distributed caching)
+- Logging: Seq (integrated with OpenTelemetry)
+- Monitoring: Prometheus and Grafana
+- Authentication: Azure EntraAD
+- Storage: Azure Blob Storage (cold archive for data archival)
+- Load Testing: K6 (capable of handling 1000 parallel requests)
 
-Authentication will be handled using Azure EntraAD. Azure blob storage (cold archive) is planned to be used for data archival
+## Architecture
+The project follows a microservices architecture with some components hosted in Azure. 
 
-The API load testing has been done using K6 with the server capable of serving 1000 req parally at a time.
+[Insert architecture diagram here]
 
-The architecture of the entire setup utilizes microservices while part of the components are hosted in Azure. 
+Key Components:
+1. API Gateway
+2. Authentication Service
+3. Expense Tracking Service
+4. Reporting Service
+5. Data Archival Service
 
-## Backend Microservice Architecture
-![Expence Tracker v1 Service Architecture drawio](https://github.com/user-attachments/assets/85cff855-3150-4ae2-a3e8-d1e383dfc3be)
+## Performance
+- The API has been load tested using K6
+- Capable of serving 1000 requests in parallel
+- Utilizes distributed caching for improved response times
+
+## Cloud Integration
+- Azure EntraAD: Handles authentication and authorization
+- Azure Blob Storage: Planned for long-term data archival (cold storage)
+
+## Monitoring and Observability
+- Seq: Centralized logging and tracing with OpenTelemetry integration
+- Prometheus & Grafana: Real-time monitoring of API traffic and system metrics
+
+## Development Practices
+- Microservices Architecture: Ensures scalability and modularity
+- Containerization: Docker for consistent deployment across environments
+- Version Control: Git (hosted on GitHub)
+- API Testing: Postman collections for endpoint validation
+
+## Future Enhancements
+1. Implement machine learning for expense prediction
+2. Integrate with financial institutions for automatic transaction import
+3. Develop a budgeting feature with alerts
+4. Implement multi-currency support
+
+## Setup and Deployment
+1. Clone the repository
+2. Set up Azure services (EntraAD and Blob Storage)
+3. Configure MongoDB and Redis instances
+4. Build and deploy Docker containers for backend services
+5. Deploy frontend applications (web and mobile)
+6. Configure Prometheus and Grafana for monitoring
+
+## Conclusion
+This project demonstrates proficiency in:
+- Full-stack development (React, Flutter, .NET)
+- Cloud services integration (Azure)
+- Microservices architecture
+- Containerization and orchestration
+- Database management (MongoDB, Redis)
+- API development and testing
+- Performance optimization and load testing
+- Monitoring and observability implementation
