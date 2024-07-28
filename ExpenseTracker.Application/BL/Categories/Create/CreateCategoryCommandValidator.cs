@@ -8,8 +8,6 @@ namespace Application.BL.Categories.Create
         {
             RuleFor(x => x.Title)
                     .NotEmpty().WithMessage("Is required.");
-            RuleFor(x => x.Text)
-                    .NotEmpty().WithMessage("Is required.");
 
             When(x => string.IsNullOrEmpty(x.CustomImage), () =>
             {

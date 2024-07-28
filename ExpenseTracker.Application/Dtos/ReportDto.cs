@@ -11,7 +11,6 @@
     public class ReportCategoryBreakdown
     {
         public string Title { get; set; }
-        public string Text { get; set; }
         public int Total { get; set; }
         public List<ReportTrack> Tracks { get; set; }
     }

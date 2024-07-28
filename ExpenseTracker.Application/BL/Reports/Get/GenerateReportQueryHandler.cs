@@ -60,7 +60,6 @@ namespace Application.BL.Reports.Get
                 dictionary.Add(group.Key, new ReportCategoryBreakdown
                 {
                     Title = currentCatageory.Title,
-                    Text = currentCatageory.Text,
                     Tracks = group.Select(x => new ReportTrack
                     {
                         Id = x.Id,

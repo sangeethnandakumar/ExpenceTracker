@@ -2,7 +2,6 @@
 using Application.Extenions;
 using Domain.Entities;
 using FluentValidation;
-using FluentValidation.Results;
 using LanguageExt.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -71,7 +70,6 @@ namespace Application.BL.Categories.Create
         {
             var category = new Category(
                 request.Title,
-                request.Text,
                 request.Icon,
                 request.Color,
                 compressedImageId
