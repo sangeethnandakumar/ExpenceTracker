@@ -36,7 +36,6 @@
                     PadColor = Color.Transparent
                 })
                 .AutoOrient()
-                .Grayscale()
             );
 
             // Configure the encoder
