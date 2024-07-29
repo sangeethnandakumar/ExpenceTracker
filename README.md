@@ -1,49 +1,62 @@
 # Expense Tracker Project
 
 ## Overview
-This repository contains a comprehensive expense tracking solution developed as a hobby project. It demonstrates proficiency in full-stack development, cloud services integration, and microservices architecture.
+> ### _This repository contains a "comprehensive expense tracking solution developed as one of my hobby project."_
+
+<hr/>
 
 ## Technology Stack
 
 ### Frontend
-1. Web Application
-   - Framework: React
-   - Type: Single Page Application (SPA)
 
-2. Mobile Application
-   - Framework: Flutter
-   - Platforms: Android & iOS
+| Application Type     | Name    | Version | Details           |
+|----------------------|---------|---------|-------------------|
+| Web      | React   | 18.2.0  | SPA               |
+| Mobile   | Flutter | 3.22    | Android & iOS     |
 
-   Key Features:
-   - Track Page: Real-time expense entry and visualization
-   - Records Page: Historical data display and analysis
-   - Category Edit Page: Dynamic expense categorization
-   - Category Create Page: Custom category management
+<hr/>
 
 ### Backend
-- Core Framework: .NET 9
-- Containerization: Docker (Chiselled Ubuntu container on Alpine)
-- Database: MongoDB (primary data storage)
-- Caching: Redis (distributed caching)
-- Logging: Seq (integrated with OpenTelemetry)
-- Monitoring: Prometheus and Grafana
-- Authentication: Azure EntraAD
-- Storage: Azure Blob Storage (cold archive for data archival)
-- Load Testing: K6 (capable of handling 1000 parallel requests)
+
+| Component             | Name       | Version             | Details                                                       |
+|-----------------------|------------|---------------------|---------------------------------------------------------------|
+| API                   | .NET       | 8                   | Alpine Chiseled Ubuntu image (aspnet:8.0-jammy-chiseled) on Docker |
+| Database              | MongoDB    | 8.0 Preview · 2023  | on Docker                                                     |
+| Distributed Caching   | Redis      | 7.0                 | on Docker                                                     |
+| Distributed Messaging | RabbitMQ   | 3.13.6              | on Docker                                                     |
+| Logging & Tracing     | Seq        | 2023.1              | on Docker                                                     |
+|                       | Serilog    |                     | Local logging (file)                                          |
+| Metrics & Monitoring  | Grafana    | 11.0.0-preview      | on Docker                                                     |
+|                       | Prometheus | 2.53.1 / 2024-07-10 | on Docker                                                     |
+| Cloud Storage & Archival  | Azure Blob Storage    |      | Azure                                                     |
+| Authentication  | Entra AD    |       | Azure                                                     |
+| CDNs  | Azure CDN   |       | Azure                                                     |
+
+![image](https://github.com/user-attachments/assets/05cec494-8a6e-4fd0-8f90-be2ed91719c8)
+
+<hr/>
+
+### Deployment Environment
+
+| Property                | Value                              |
+|-------------------------|------------------------------------|
+| Operating System        | Ubuntu 23.04                       |
+| Kernel                  | Linux 6.2.0-39-generic             |
+| Architecture            | x86-64                             |
+| Memory                  | 8GB Physical                       |
+| CPU(s)                  | 2 vCPUs                            |
+| Model name              | AMD EPYC 7543P 32-Core Processor   |
+
+![image](https://github.com/user-attachments/assets/e4256895-984c-4e61-9c34-da28fa9f1105)
 
 ## Architecture
 The project follows a microservices architecture with some components hosted in Azure. 
 
-[Insert architecture diagram here]
+![Expence Tracker v1 Service Architecture drawio](https://github.com/user-attachments/assets/cda79f7d-aadc-428d-9622-bfd8c9c10f98)
 
-Key Components:
-1. API Gateway
-2. Authentication Service
-3. Expense Tracking Service
-4. Reporting Service
-5. Data Archival Service
+<hr/>
 
-## Performance
+## K6 Performance
 - The API has been load tested using K6
 - Capable of serving 1000 requests in parallel
 - Utilizes distributed caching for improved response times
@@ -57,32 +70,17 @@ Key Components:
 - Prometheus & Grafana: Real-time monitoring of API traffic and system metrics
 
 ## Development Practices
-- Microservices Architecture: Ensures scalability and modularity
-- Containerization: Docker for consistent deployment across environments
-- Version Control: Git (hosted on GitHub)
-- API Testing: Postman collections for endpoint validation
+- Build on Clean Architecture principle
+- Containerised
 
-## Future Enhancements
-1. Implement machine learning for expense prediction
-2. Integrate with financial institutions for automatic transaction import
-3. Develop a budgeting feature with alerts
-4. Implement multi-currency support
+### Images
 
-## Setup and Deployment
-1. Clone the repository
-2. Set up Azure services (EntraAD and Blob Storage)
-3. Configure MongoDB and Redis instances
-4. Build and deploy Docker containers for backend services
-5. Deploy frontend applications (web and mobile)
-6. Configure Prometheus and Grafana for monitoring
+|                        |                        |                        |
+|------------------------|------------------------|------------------------|
+| ![Image 1](https://github.com/user-attachments/assets/836e89a2-dbea-4f1d-a03f-e0f5268a0850) | ![Image 2](https://github.com/user-attachments/assets/3e5889d8-728d-451b-988b-da44a5309842) | ![Image 3](https://github.com/user-attachments/assets/23f33a41-de92-4a4a-a287-9eecf3a0b90f) |
+| ![Image 4](https://github.com/user-attachments/assets/d185de12-ae4d-40b1-8330-1dcd04d9dbf1) | ![Image 5](https://github.com/user-attachments/assets/1af7a03e-c7f6-4c55-a2dc-6227304712ed) | ![Image 6](https://github.com/user-attachments/assets/6f1f6240-c527-487b-9cce-aa64cc5f2b83) |
 
-## Conclusion
-This project demonstrates proficiency in:
-- Full-stack development (React, Flutter, .NET)
-- Cloud services integration (Azure)
-- Microservices architecture
-- Containerization and orchestration
-- Database management (MongoDB, Redis)
-- API development and testing
-- Performance optimization and load testing
-- Monitoring and observability implementation
+
+
+
+
