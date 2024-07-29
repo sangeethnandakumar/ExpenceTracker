@@ -34,17 +34,21 @@ namespace Application.BL.Categories.Delete
             }
 
             //Entity To Delete
-            var entityToDelete = await dbContext.Categories.FirstOrDefaultAsync(t => t.Id == Guid.Parse(request.Id), cancellationToken);
-            if (entityToDelete is null)
+            var categoryToDelete = await dbContext.Categories.FirstOrDefaultAsync(t => t.Id == Guid.Parse(request.Id), cancellationToken);
+            if (categoryToDelete is null)
             {
                 logger.LogInformation("No data found for id: {@Id}", request.Id);
                 return new Result<Guid>(new DataException($"No data found for id: {request.Id}"));
             }
 
-            //Delete            
-            var associatedTracks = await dbContext.Tracks.Where(x=>x.Category == entityToDelete.Id).ToListAsync();
-            var result = dbContext.Categories.Remove(entityToDelete);
+            //Discover            
+            var associatedTracks = await dbContext.Tracks.Where(x=>x.Category == categoryToDelete.Id).ToListAsync();
+            var associatedImages = await dbContext.Images.Where(x=>x.MapId == categoryToDelete.CustomImage).ToListAsync();
+
+            //Delete
+            var result = dbContext.Categories.Remove(categoryToDelete);
             dbContext.Tracks.RemoveRange(associatedTracks);
+            dbContext.Images.RemoveRange(associatedImages);
 
             await dbContext.SaveChangesAsync(cancellationToken);
 

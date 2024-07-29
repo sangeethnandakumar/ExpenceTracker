@@ -5,6 +5,7 @@ using FluentValidation;
 using LanguageExt.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using static Application.Extenions.ImageProcessingHelper;
 
 namespace Application.BL.Categories.Create
 {
@@ -66,7 +67,9 @@ namespace Application.BL.Categories.Create
             try
             {
                 var imageBytes = DecodeBase64Image(customImage);
-                var compressedImageData = await ImageProcessingHelper.CompressImageAsync(imageBytes, 16, 4, SixLabors.ImageSharp.Formats.Png.PngBitDepth.Bit8);
+                var compressedImageData = await ImageProcessingHelper.CompressImageAsync(imageBytes, TargetSize.Px64, SixLabors.ImageSharp.Formats.Png.PngBitDepth.Bit8);
+
+                var test = Convert.ToBase64String(compressedImageData);
 
                 // Create and save compressed image
                 var compressedImage = new CompressedImage(Guid.NewGuid().ToString(), compressedImageData);
