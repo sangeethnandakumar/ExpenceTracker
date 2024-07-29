@@ -11,8 +11,8 @@
 
 | Application Type     | Name    | Version | Details           |
 |----------------------|---------|---------|-------------------|
-| Web Application      | React   | 18.2.0  | SPA               |
-| Mobile Application   | Flutter | 3.22    | Android & iOS     |
+| Web      | React   | 18.2.0  | SPA               |
+| Mobile   | Flutter | 3.22    | Android & iOS     |
 
 <hr/>
 
