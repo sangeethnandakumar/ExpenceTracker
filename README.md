@@ -71,12 +71,11 @@ The project follows a microservices architecture with some components hosted in 
 
 ### Images
 
-![WhatsApp Image 2024-07-29 at 10 38 57_a392e631](https://github.com/user-attachments/assets/836e89a2-dbea-4f1d-a03f-e0f5268a0850)
-![WhatsApp Image 2024-07-29 at 10 38 57_70fbeb44](https://github.com/user-attachments/assets/3e5889d8-728d-451b-988b-da44a5309842)
-![WhatsApp Image 2024-07-29 at 10 38 57_8caf2cf7](https://github.com/user-attachments/assets/23f33a41-de92-4a4a-a287-9eecf3a0b90f)
-![WhatsApp Image 2024-07-29 at 10 38 58_737f76df](https://github.com/user-attachments/assets/d185de12-ae4d-40b1-8330-1dcd04d9dbf1)
-![WhatsApp Image 2024-07-29 at 10 38 58_eeee66c0](https://github.com/user-attachments/assets/1af7a03e-c7f6-4c55-a2dc-6227304712ed)
-![WhatsApp Image 2024-07-29 at 10 38 58_cba92f32](https://github.com/user-attachments/assets/6f1f6240-c527-487b-9cce-aa64cc5f2b83)
+|                        |                        |                        |
+|------------------------|------------------------|------------------------|
+| ![Image 1](https://github.com/user-attachments/assets/836e89a2-dbea-4f1d-a03f-e0f5268a0850) | ![Image 2](https://github.com/user-attachments/assets/3e5889d8-728d-451b-988b-da44a5309842) | ![Image 3](https://github.com/user-attachments/assets/23f33a41-de92-4a4a-a287-9eecf3a0b90f) |
+| ![Image 4](https://github.com/user-attachments/assets/d185de12-ae4d-40b1-8330-1dcd04d9dbf1) | ![Image 5](https://github.com/user-attachments/assets/1af7a03e-c7f6-4c55-a2dc-6227304712ed) | ![Image 6](https://github.com/user-attachments/assets/6f1f6240-c527-487b-9cce-aa64cc5f2b83) |
+
 
 
 
