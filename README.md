@@ -1,26 +1,49 @@
 # Expense Tracker Project
 
 ## Overview
-This repository contains a comprehensive expense tracking solution developed as a hobby project. It demonstrates proficiency in full-stack development, cloud services integration, and microservices architecture.
+> ### _This repository contains a "comprehensive expense tracking solution developed as one of my hobby project."_
+
+<hr/>
 
 ## Technology Stack
 
 ### Frontend
-1. Web Application
-   - Framework: React
-   - Type: Single Page Application (SPA)
 
-2. Mobile Application
-   - Framework: Flutter
-   - Platforms: Android & iOS
+| Application Type     | Name    | Version | Details           |
+|----------------------|---------|---------|-------------------|
+| Web Application      | React   | 18.2.0  | SPA               |
+| Mobile Application   | Flutter | 3.22    | Android & iOS     |
 
-   Key Features:
-   - Track Page: Real-time expense entry and visualization
-   - Records Page: Historical data display and analysis
-   - Category Edit Page: Dynamic expense categorization
-   - Category Create Page: Custom category management
+<hr/>
 
 ### Backend
+
+| Component             | Name       | Version             | Details                                                       |
+|-----------------------|------------|---------------------|---------------------------------------------------------------|
+| API                   | .NET       | 8                   | Alpine Chiseled Ubuntu image (aspnet:8.0-jammy-chiseled) on Docker |
+| Database              | MongoDB    | 8.0 Preview · 2023  | on Docker                                                     |
+| Distributed Caching   | Redis      | 7.0                 | on Docker                                                     |
+| Distributed Messaging | RabbitMQ   | 3.13.6              | on Docker                                                     |
+| Logging & Tracing     | Seq        | 2023.1              | on Docker                                                     |
+|                       | Serilog    |                     | Local logging (file)                                          |
+| Metrics & Monitoring  | Grafana    | 11.0.0-preview      | on Docker                                                     |
+|                       | Prometheus | 2.53.1 / 2024-07-10 | on Docker                                                     |
+
+<hr/>
+
+### Deployment Environment
+
+| Property                | Value                              |
+|-------------------------|------------------------------------|
+| Operating System        | Ubuntu 23.04                       |
+| Kernel                  | Linux 6.2.0-39-generic             |
+| Architecture            | x86-64                             |
+| Memory                  | 8GB Physical                       |
+| CPU(s)                  | 2 vCPUs                            |
+| Model name              | AMD EPYC 7543P 32-Core Processor   |
+
+
+
 - Core Framework: .NET 9
 - Containerization: Docker (Chiselled Ubuntu container on Alpine)
 - Database: MongoDB (primary data storage)
