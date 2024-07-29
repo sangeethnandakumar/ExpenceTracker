@@ -45,31 +45,14 @@
 | CPU(s)                  | 2 vCPUs                            |
 | Model name              | AMD EPYC 7543P 32-Core Processor   |
 
-
-
-- Core Framework: .NET 9
-- Containerization: Docker (Chiselled Ubuntu container on Alpine)
-- Database: MongoDB (primary data storage)
-- Caching: Redis (distributed caching)
-- Logging: Seq (integrated with OpenTelemetry)
-- Monitoring: Prometheus and Grafana
-- Authentication: Azure EntraAD
-- Storage: Azure Blob Storage (cold archive for data archival)
-- Load Testing: K6 (capable of handling 1000 parallel requests)
-
 ## Architecture
 The project follows a microservices architecture with some components hosted in Azure. 
 
-[Insert architecture diagram here]
+![Expence Tracker v1 Service Architecture drawio](https://github.com/user-attachments/assets/cda79f7d-aadc-428d-9622-bfd8c9c10f98)
 
-Key Components:
-1. API Gateway
-2. Authentication Service
-3. Expense Tracking Service
-4. Reporting Service
-5. Data Archival Service
+<hr/>
 
-## Performance
+## K6 Performance
 - The API has been load tested using K6
 - Capable of serving 1000 requests in parallel
 - Utilizes distributed caching for improved response times
@@ -83,32 +66,18 @@ Key Components:
 - Prometheus & Grafana: Real-time monitoring of API traffic and system metrics
 
 ## Development Practices
-- Microservices Architecture: Ensures scalability and modularity
-- Containerization: Docker for consistent deployment across environments
-- Version Control: Git (hosted on GitHub)
-- API Testing: Postman collections for endpoint validation
+- Build on Clean Architecture principle
+- Containerised
 
-## Future Enhancements
-1. Implement machine learning for expense prediction
-2. Integrate with financial institutions for automatic transaction import
-3. Develop a budgeting feature with alerts
-4. Implement multi-currency support
+### Images
 
-## Setup and Deployment
-1. Clone the repository
-2. Set up Azure services (EntraAD and Blob Storage)
-3. Configure MongoDB and Redis instances
-4. Build and deploy Docker containers for backend services
-5. Deploy frontend applications (web and mobile)
-6. Configure Prometheus and Grafana for monitoring
+![WhatsApp Image 2024-07-29 at 10 38 57_a392e631](https://github.com/user-attachments/assets/836e89a2-dbea-4f1d-a03f-e0f5268a0850)
+![WhatsApp Image 2024-07-29 at 10 38 57_70fbeb44](https://github.com/user-attachments/assets/3e5889d8-728d-451b-988b-da44a5309842)
+![WhatsApp Image 2024-07-29 at 10 38 57_8caf2cf7](https://github.com/user-attachments/assets/23f33a41-de92-4a4a-a287-9eecf3a0b90f)
+![WhatsApp Image 2024-07-29 at 10 38 58_737f76df](https://github.com/user-attachments/assets/d185de12-ae4d-40b1-8330-1dcd04d9dbf1)
+![WhatsApp Image 2024-07-29 at 10 38 58_eeee66c0](https://github.com/user-attachments/assets/1af7a03e-c7f6-4c55-a2dc-6227304712ed)
+![WhatsApp Image 2024-07-29 at 10 38 58_cba92f32](https://github.com/user-attachments/assets/6f1f6240-c527-487b-9cce-aa64cc5f2b83)
 
-## Conclusion
-This project demonstrates proficiency in:
-- Full-stack development (React, Flutter, .NET)
-- Cloud services integration (Azure)
-- Microservices architecture
-- Containerization and orchestration
-- Database management (MongoDB, Redis)
-- API development and testing
-- Performance optimization and load testing
-- Monitoring and observability implementation
+
+
+
