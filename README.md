@@ -32,6 +32,8 @@
 | Authentication  | Entra AD    |       | Azure                                                     |
 | CDNs  | Azure CDN   |       | Azure                                                     |
 
+![image](https://github.com/user-attachments/assets/05cec494-8a6e-4fd0-8f90-be2ed91719c8)
+
 <hr/>
 
 ### Deployment Environment
@@ -44,6 +46,8 @@
 | Memory                  | 8GB Physical                       |
 | CPU(s)                  | 2 vCPUs                            |
 | Model name              | AMD EPYC 7543P 32-Core Processor   |
+
+![image](https://github.com/user-attachments/assets/e4256895-984c-4e61-9c34-da28fa9f1105)
 
 ## Architecture
 The project follows a microservices architecture with some components hosted in Azure. 
