@@ -28,6 +28,9 @@
 |                       | Serilog    |                     | Local logging (file)                                          |
 | Metrics & Monitoring  | Grafana    | 11.0.0-preview      | on Docker                                                     |
 |                       | Prometheus | 2.53.1 / 2024-07-10 | on Docker                                                     |
+| Cloud Storage & Archival  | Azure Blob Storage    |      | Azure                                                     |
+| Authentication  | Entra AD    |       | Azure                                                     |
+| CDNs  | Azure CDN   |       | Azure                                                     |
 
 <hr/>
 
