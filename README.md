@@ -60,9 +60,6 @@ The project follows a microservices architecture with some components hosted in 
 | Memory                  | 8GB Physical                       |
 | CPU(s)                  | 2 vCPUs                            |
 | Model name              | AMD EPYC 7543P 32-Core Processor   |
-
-![image](https://github.com/user-attachments/assets/e4256895-984c-4e61-9c34-da28fa9f1105)
-
 <hr/>
 
 # Other Missilenius Tools Involved
