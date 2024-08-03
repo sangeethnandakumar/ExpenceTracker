@@ -3,7 +3,7 @@
 ## Overview
 > ### _This repository contains a "comprehensive expense tracking solution developed as <font color="blue"><u>one of my hobby project</u></font>."_
 
-One of my hobby project I architected and deployed on my Linux server. Built on clean architecture as 3 microservices, it features a .NET 8 WebAPI containerized with Docker. Supports distributed logging and tracing with Seq, metrics with Prometheus and Grafana. A Flutter app logs expenses and manages categories. The system uses RabbitMQ for messaging, Redis for caching, MongoDB for persistence, EF Core as ORM, Firebase for notifications, Azure EntraAD for auth & Blob storage for archrivals.
+One of my hobby project architected and deployed on my Linux server. Built on clean architecture as 3 microservices, it features a .NET 8 WebAPI containerized with Docker. Supports distributed logging and tracing with Seq, metrics with Prometheus and Grafana. A Flutter app logs expenses and manages categories. The system uses RabbitMQ for messaging, Redis for caching, MongoDB for persistence, EF Core as ORM, Firebase for notifications, Azure EntraAD for auth & Blob storage for archrivals.
 
 <hr/>
 
