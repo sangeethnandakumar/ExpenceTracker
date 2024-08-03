@@ -1,7 +1,7 @@
 # Expense Tracker Project
 
 ## Overview
-> ### _This repository contains a "comprehensive expense tracking solution developed as one of my hobby project."_
+> ### _This repository contains a "comprehensive expense tracking solution developed as <font color="blue"><u>one of my hobby project</u></font>."_
 
 <hr/>
 
