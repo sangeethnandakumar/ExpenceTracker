@@ -3,8 +3,6 @@
 ## Overview
 > ### _This repository contains a "comprehensive expense tracking solution developed as <font color="blue"><u>one of my hobby project</u></font>."_
 
-<iframe width="592" height="1256" src="https://www.youtube.com/embed/4neii_v1MAQ" title="Demo" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
 <hr/>
 
 # Technology Stack
@@ -17,6 +15,10 @@
 | Mobile   | Flutter | 3.22    | Android & iOS     |
 
 ### Frontend Flutter App
+
+<center>
+<iframe width="592" height="1256" src="https://www.youtube.com/embed/4neii_v1MAQ" title="Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</center>
 
 |                        |                        |                        |
 |------------------------|------------------------|------------------------|
