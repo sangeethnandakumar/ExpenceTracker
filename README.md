@@ -40,7 +40,10 @@
 | Authentication  | Entra AD    |       | Azure                                                     |
 | CDNs  | Azure CDN   |       | Azure                                                     |
 
-![image](https://github.com/user-attachments/assets/05cec494-8a6e-4fd0-8f90-be2ed91719c8)
+## Docker Instances
+
+![image](https://github.com/user-attachments/assets/998f1a15-5f85-46b9-b3de-217cebbe34fa)
+
 
 <hr/>
 
