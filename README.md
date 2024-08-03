@@ -17,7 +17,7 @@
 ### Frontend Flutter App
 
 <center>
-<iframe width="592" height="1256" src="https://www.youtube.com/embed/4neii_v1MAQ" title="Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe width="296" height="628" src="https://www.youtube.com/embed/4neii_v1MAQ" title="Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </center>
 
 |                        |                        |                        |
