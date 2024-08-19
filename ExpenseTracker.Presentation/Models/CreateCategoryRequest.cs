@@ -5,5 +5,5 @@
       string Icon,
       string Color,
       string CustomImage
-);
+    );
 }

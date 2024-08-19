@@ -13,7 +13,7 @@ namespace ExpenseTracker.Installers
             services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<IAppDBContext>());
 
             //Automapper
-            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(ApplicationMappingProfile));
 
             //Fluent Validator
             services.AddValidatorsFromAssemblyContaining<IAppDBContext>(ServiceLifetime.Singleton);

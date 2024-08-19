@@ -1,5 +1,6 @@
 ﻿using Carter;
 using ExpenseTracker.Installers.Base;
+using Presentation.MappingProfiles;
 
 namespace ExpenseTracker.Installers
 {
@@ -7,6 +8,9 @@ namespace ExpenseTracker.Installers
     {
         public void InstallService(IHostBuilder host, IServiceCollection services, IConfiguration configuration)
         {
+            //Automapper
+            services.AddAutoMapper(typeof(PresentationMappingProfile));
+
             //Redis Cache
             var redisConnectionString = configuration.GetConnectionString("Redis");
             services.AddStackExchangeRedisCache(options =>
