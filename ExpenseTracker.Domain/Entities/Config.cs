@@ -61,6 +61,13 @@
         public string? Id { get; set; }
         public string? Model { get; set; }
         public string? Brand { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? Board { get; set; }
+        public string? Product { get; set; }
+        public string? DeviceName { get; set; }
+        public string? VersionRelease { get; set; }
+        public string? VersionIncremental { get; set; }
+        public string? VersionBaseOS { get; set; }
     }
 
     public class MiscModel
