@@ -7,7 +7,6 @@ using LanguageExt.Common;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Data;
 
 namespace Application.BL.Configs.Update
 {
