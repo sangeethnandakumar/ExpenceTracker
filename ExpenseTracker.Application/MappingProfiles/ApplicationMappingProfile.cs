@@ -22,6 +22,9 @@ namespace Application.MappingProfiles
             //Report
             CreateMap<Report, ReportDto>();
 
+            //DeveloperSuggession
+            CreateMap<DeveloperSuggession, DeveloperSuggessionDto>();
+
             //Config
             CreateMap<UpdateConfigCommand, ConfigModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.User.Id))
