@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.BL.DeveloperSuggessions.GetById
+namespace Application.BL.DeveloperSuggestions.GetById
 {
-    public sealed class GetDeveloperSuggessionQueryValidator : AbstractValidator<GetDeveloperSuggessionQuery>
+    public sealed class GetDeveloperSuggestionQueryValidator : AbstractValidator<GetDeveloperSuggestionQuery>
     {
-        public GetDeveloperSuggessionQueryValidator()
+        public GetDeveloperSuggestionQueryValidator()
         {
             RuleFor(x => x.Id)
                 .NotEmpty().WithMessage("Is required.")

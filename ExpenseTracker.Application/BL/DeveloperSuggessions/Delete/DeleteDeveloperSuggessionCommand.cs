@@ -1,7 +1,7 @@
 ﻿using LanguageExt.Common;
 using MediatR;
 
-namespace Application.BL.DeveloperSuggessions.Delete
+namespace Application.BL.DeveloperSuggestions.Delete
 {
-    public sealed record DeleteDeveloperSuggessionCommand(string Id) : IRequest<Result<Guid>>;
+    public sealed record DeleteDeveloperSuggestionCommand(string Id) : IRequest<Result<Guid>>;
 }

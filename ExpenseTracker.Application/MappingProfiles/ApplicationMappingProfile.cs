@@ -22,8 +22,8 @@ namespace Application.MappingProfiles
             //Report
             CreateMap<Report, ReportDto>();
 
-            //DeveloperSuggession
-            CreateMap<DeveloperSuggession, DeveloperSuggessionDto>();
+            //DeveloperSuggestion
+            CreateMap<DeveloperSuggestion, DeveloperSuggestionDto>();
 
             //Config
             CreateMap<UpdateConfigCommand, ConfigModel>()

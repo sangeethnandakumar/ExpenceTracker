@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.BL.DeveloperSuggessions.GetAll
+namespace Application.BL.DeveloperSuggestions.GetAll
 {
-    public sealed class GetDeveloperSuggessionsQueryValidator : AbstractValidator<GetDeveloperSuggessionsQuery>
+    public sealed class GetDeveloperSuggestionsQueryValidator : AbstractValidator<GetDeveloperSuggestionsQuery>
     {
-        public GetDeveloperSuggessionsQueryValidator()
+        public GetDeveloperSuggestionsQueryValidator()
         {
         }
     }

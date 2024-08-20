@@ -1,6 +1,6 @@
 ﻿namespace Presentation.Models
 {
-    public sealed record CreateDeveloperSuggessionRequest(
+    public sealed record CreateDeveloperSuggestionRequest(
           string UserId,
           string AppName,
           string Message

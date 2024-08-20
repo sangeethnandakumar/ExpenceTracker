@@ -7,22 +7,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
 
-namespace Application.BL.DeveloperSuggessions.Delete
+namespace Application.BL.DeveloperSuggestions.Delete
 {
-    public sealed class DeleteDeveloperSuggessionCommandHandler : IRequestHandler<DeleteDeveloperSuggessionCommand, Result<Guid>>
+    public sealed class DeleteDeveloperSuggestionCommandHandler : IRequestHandler<DeleteDeveloperSuggestionCommand, Result<Guid>>
     {
-        private readonly ILogger<DeleteDeveloperSuggessionCommandHandler> logger;
+        private readonly ILogger<DeleteDeveloperSuggestionCommandHandler> logger;
         private readonly IAppDBContext dbContext;
-        private readonly IValidator<DeleteDeveloperSuggessionCommand> validator;
+        private readonly IValidator<DeleteDeveloperSuggestionCommand> validator;
 
-        public DeleteDeveloperSuggessionCommandHandler(ILogger<DeleteDeveloperSuggessionCommandHandler> logger, IAppDBContext dbContext, IValidator<DeleteDeveloperSuggessionCommand> validator)
+        public DeleteDeveloperSuggestionCommandHandler(ILogger<DeleteDeveloperSuggestionCommandHandler> logger, IAppDBContext dbContext, IValidator<DeleteDeveloperSuggestionCommand> validator)
         {
             this.logger = logger;
             this.dbContext = dbContext;
             this.validator = validator;
         }
 
-        public async Task<Result<Guid>> Handle(DeleteDeveloperSuggessionCommand request, CancellationToken cancellationToken)
+        public async Task<Result<Guid>> Handle(DeleteDeveloperSuggestionCommand request, CancellationToken cancellationToken)
         {
             //Validate
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -34,7 +34,7 @@ namespace Application.BL.DeveloperSuggessions.Delete
             }
 
             //Entity To Delete
-            var entityToDelete = await dbContext.DeveloperSuggessions.FirstOrDefaultAsync(t => t.Id == Guid.Parse(request.Id), cancellationToken);
+            var entityToDelete = await dbContext.DeveloperSuggestions.FirstOrDefaultAsync(t => t.Id == Guid.Parse(request.Id), cancellationToken);
             if (entityToDelete is null)
             {
                 logger.LogInformation("No data found for id: {@Id}", request.Id);
@@ -42,7 +42,7 @@ namespace Application.BL.DeveloperSuggessions.Delete
             }
 
             //Delete
-            var result = dbContext.DeveloperSuggessions.Remove(entityToDelete);
+            var result = dbContext.DeveloperSuggestions.Remove(entityToDelete);
             await dbContext.SaveChangesAsync(cancellationToken);
 
             //Complete

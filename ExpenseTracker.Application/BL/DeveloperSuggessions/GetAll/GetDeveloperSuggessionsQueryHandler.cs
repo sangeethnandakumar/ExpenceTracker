@@ -8,17 +8,17 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Application.BL.DeveloperSuggessions.GetAll
+namespace Application.BL.DeveloperSuggestions.GetAll
 {
-    public sealed class GetDeveloperSuggessionsQueryHandler : IRequestHandler<GetDeveloperSuggessionsQuery, Result<IEnumerable<DeveloperSuggessionDto>>>
+    public sealed class GetDeveloperSuggestionsQueryHandler : IRequestHandler<GetDeveloperSuggestionsQuery, Result<IEnumerable<DeveloperSuggestionDto>>>
     {
-        private readonly ILogger<GetDeveloperSuggessionsQueryHandler> logger;
+        private readonly ILogger<GetDeveloperSuggestionsQueryHandler> logger;
         private readonly IAppDBContext dbContext;
         private readonly IMapper mapper;
-        private readonly IValidator<GetDeveloperSuggessionsQuery> validator;
+        private readonly IValidator<GetDeveloperSuggestionsQuery> validator;
 
 
-        public GetDeveloperSuggessionsQueryHandler(ILogger<GetDeveloperSuggessionsQueryHandler> logger, IAppDBContext dbContext, IMapper mapper, IValidator<GetDeveloperSuggessionsQuery> validator)
+        public GetDeveloperSuggestionsQueryHandler(ILogger<GetDeveloperSuggestionsQueryHandler> logger, IAppDBContext dbContext, IMapper mapper, IValidator<GetDeveloperSuggestionsQuery> validator)
         {
             this.logger = logger;
             this.dbContext = dbContext;
@@ -26,22 +26,22 @@ namespace Application.BL.DeveloperSuggessions.GetAll
             this.validator = validator;
         }
 
-        public async Task<Result<IEnumerable<DeveloperSuggessionDto>>> Handle(GetDeveloperSuggessionsQuery request, CancellationToken cancellationToken)
+        public async Task<Result<IEnumerable<DeveloperSuggestionDto>>> Handle(GetDeveloperSuggestionsQuery request, CancellationToken cancellationToken)
         {
             //Validate
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 logger.LogInformation("Validation errors: {@ValidationErrors}", validationResult.ToStandardDictionary());
-                return new Result<IEnumerable<DeveloperSuggessionDto>>(new ValidationException(validationResult.Errors));
+                return new Result<IEnumerable<DeveloperSuggestionDto>>(new ValidationException(validationResult.Errors));
             }
 
             //Proceed
-            var queryResult = await dbContext.DeveloperSuggessions.ToListAsync();
-            var result = mapper.Map<IEnumerable<DeveloperSuggessionDto>>(queryResult);
+            var queryResult = await dbContext.DeveloperSuggestions.ToListAsync();
+            var result = mapper.Map<IEnumerable<DeveloperSuggestionDto>>(queryResult);
 
             //Complete
-            return new Result<IEnumerable<DeveloperSuggessionDto>>(result);
+            return new Result<IEnumerable<DeveloperSuggestionDto>>(result);
         }
     }
 }

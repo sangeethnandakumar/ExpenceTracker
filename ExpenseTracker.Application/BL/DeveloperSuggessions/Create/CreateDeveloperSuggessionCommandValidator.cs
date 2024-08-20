@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.BL.DeveloperSuggessions.Create
+namespace Application.BL.DeveloperSuggestions.Create
 {
-    public sealed class CreateDeveloperSuggessionCommandValidator : AbstractValidator<CreateDeveloperSuggessionCommand>
+    public sealed class CreateDeveloperSuggestionCommandValidator : AbstractValidator<CreateDeveloperSuggestionCommand>
     {
-        public CreateDeveloperSuggessionCommandValidator()
+        public CreateDeveloperSuggestionCommandValidator()
         {
             RuleFor(x => x.UserId)
                     .NotEmpty().WithMessage("Is required.");

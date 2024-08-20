@@ -9,17 +9,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
 
-namespace Application.BL.DeveloperSuggessions.GetById
+namespace Application.BL.DeveloperSuggestions.GetById
 {
-    public sealed class GetDeveloperSuggessionQueryHandler : IRequestHandler<GetDeveloperSuggessionQuery, Result<DeveloperSuggessionDto>>
+    public sealed class GetDeveloperSuggestionQueryHandler : IRequestHandler<GetDeveloperSuggestionQuery, Result<DeveloperSuggestionDto>>
     {
-        private readonly ILogger<GetDeveloperSuggessionQueryHandler> logger;
+        private readonly ILogger<GetDeveloperSuggestionQueryHandler> logger;
         private readonly IAppDBContext dbContext;
         private readonly IMapper mapper;
-        private readonly IValidator<GetDeveloperSuggessionQuery> validator;
+        private readonly IValidator<GetDeveloperSuggestionQuery> validator;
 
 
-        public GetDeveloperSuggessionQueryHandler(ILogger<GetDeveloperSuggessionQueryHandler> logger, IAppDBContext dbContext, IMapper mapper, IValidator<GetDeveloperSuggessionQuery> validator)
+        public GetDeveloperSuggestionQueryHandler(ILogger<GetDeveloperSuggestionQueryHandler> logger, IAppDBContext dbContext, IMapper mapper, IValidator<GetDeveloperSuggestionQuery> validator)
         {
             this.logger = logger;
             this.dbContext = dbContext;
@@ -27,24 +27,24 @@ namespace Application.BL.DeveloperSuggessions.GetById
             this.validator = validator;
         }
 
-        public async Task<Result<DeveloperSuggessionDto>> Handle(GetDeveloperSuggessionQuery request, CancellationToken cancellationToken)
+        public async Task<Result<DeveloperSuggestionDto>> Handle(GetDeveloperSuggestionQuery request, CancellationToken cancellationToken)
         {
             //Validate
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 logger.LogInformation("Validation errors: {@ValidationErrors}", validationResult.ToStandardDictionary());
-                return new Result<DeveloperSuggessionDto>(new ValidationException(validationResult.Errors));
+                return new Result<DeveloperSuggestionDto>(new ValidationException(validationResult.Errors));
             }
 
             //Proceed
-            var queryResult = await dbContext.DeveloperSuggessions.FirstOrDefaultAsync(x => x.Id == Guid.Parse(request.Id));
+            var queryResult = await dbContext.DeveloperSuggestions.FirstOrDefaultAsync(x => x.Id == Guid.Parse(request.Id));
             if (queryResult is null)
             {
                 logger.LogInformation("No data found for id: {@Id}", request.Id);
-                return new Result<DeveloperSuggessionDto>(new DataException($"No data found for id: {request.Id}"));
+                return new Result<DeveloperSuggestionDto>(new DataException($"No data found for id: {request.Id}"));
             }
-            var result = mapper.Map<DeveloperSuggessionDto>(queryResult);
+            var result = mapper.Map<DeveloperSuggestionDto>(queryResult);
 
             //Complete
             return result;

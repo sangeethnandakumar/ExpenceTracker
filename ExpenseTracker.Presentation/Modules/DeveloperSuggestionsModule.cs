@@ -1,7 +1,7 @@
-﻿using Application.BL.DeveloperSuggessions.Create;
-using Application.BL.DeveloperSuggessions.Delete;
-using Application.BL.DeveloperSuggessions.GetAll;
-using Application.BL.DeveloperSuggessions.GetById;
+﻿using Application.BL.DeveloperSuggestions.Create;
+using Application.BL.DeveloperSuggestions.Delete;
+using Application.BL.DeveloperSuggestions.GetAll;
+using Application.BL.DeveloperSuggestions.GetById;
 using Carter;
 using FluentValidation;
 using MediatR;
@@ -15,11 +15,11 @@ using System.Data;
 
 namespace Presentation.Modules
 {
-    public sealed class DeveloperSuggessionsModule : CarterModule
+    public sealed class DeveloperSuggestionsModule : CarterModule
     {
-        public DeveloperSuggessionsModule() : base("developer-suggessions")
+        public DeveloperSuggestionsModule() : base("developer-suggestions")
         {
-            WithTags("DeveloperSuggessions");
+            WithTags("DeveloperSuggestions");
         }
 
         public override void AddRoutes(IEndpointRouteBuilder app)
@@ -27,7 +27,7 @@ namespace Presentation.Modules
             //GET
             app.MapGet("/", async (IMediator mediator) =>
             {
-                var result = await mediator.Send(new GetDeveloperSuggessionsQuery());
+                var result = await mediator.Send(new GetDeveloperSuggestionsQuery());
                 return result.Match(
                     s => Results.Ok(s),
                     f => f switch
@@ -42,7 +42,7 @@ namespace Presentation.Modules
             //GET
             app.MapGet("/{id}", async ([FromRoute] string id, IMediator mediator) =>
             {
-                var result = await mediator.Send(new GetDeveloperSuggessionQuery(id));
+                var result = await mediator.Send(new GetDeveloperSuggestionQuery(id));
                 return result.Match(
                     s => Results.Ok(s),
                     f => f switch
@@ -55,9 +55,9 @@ namespace Presentation.Modules
 
 
             //POST
-            app.MapPost("/", async (CreateDeveloperSuggessionRequest request, IMediator mediator) =>
+            app.MapPost("/", async (CreateDeveloperSuggestionRequest request, IMediator mediator) =>
             {
-                var result = await mediator.Send(new CreateDeveloperSuggessionCommand(
+                var result = await mediator.Send(new CreateDeveloperSuggestionCommand(
                     request.UserId,
                     request.AppName,
                     request.Message
@@ -77,7 +77,7 @@ namespace Presentation.Modules
             //DELETE
             app.MapDelete("/{id}", async ([FromRoute] string id, IMediator mediator) =>
             {
-                var result = await mediator.Send(new DeleteDeveloperSuggessionCommand(id));
+                var result = await mediator.Send(new DeleteDeveloperSuggestionCommand(id));
 
                 return result.Match(
                         s => Results.Ok(s),

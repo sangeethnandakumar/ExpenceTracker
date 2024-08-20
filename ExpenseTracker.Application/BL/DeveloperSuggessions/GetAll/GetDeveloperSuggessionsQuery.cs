@@ -2,7 +2,7 @@
 using LanguageExt.Common;
 using MediatR;
 
-namespace Application.BL.DeveloperSuggessions.GetAll
+namespace Application.BL.DeveloperSuggestions.GetAll
 {
-    public sealed record GetDeveloperSuggessionsQuery() : IRequest<Result<IEnumerable<DeveloperSuggessionDto>>>;
+    public sealed record GetDeveloperSuggestionsQuery() : IRequest<Result<IEnumerable<DeveloperSuggestionDto>>>;
 }

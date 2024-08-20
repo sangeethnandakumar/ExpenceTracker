@@ -2,13 +2,13 @@
 
 namespace Domain.Entities
 {
-    public sealed class DeveloperSuggession : Entity
+    public sealed class DeveloperSuggestion : Entity
     {
         //Private Contructor for EFCore
-        private DeveloperSuggession() { }
+        private DeveloperSuggestion() { }
 
         //Contructor
-        public DeveloperSuggession(string userId, string appName, string message) : base(Guid.NewGuid())
+        public DeveloperSuggestion(string userId, string appName, string message) : base(Guid.NewGuid())
         {
             UserId = userId;
             AppName = appName;

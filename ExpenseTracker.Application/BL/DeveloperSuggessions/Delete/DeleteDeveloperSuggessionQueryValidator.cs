@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.BL.DeveloperSuggessions.Delete
+namespace Application.BL.DeveloperSuggestions.Delete
 {
-    public sealed class DeleteDeveloperSuggessionQueryValidator : AbstractValidator<DeleteDeveloperSuggessionCommand>
+    public sealed class DeleteDeveloperSuggestionQueryValidator : AbstractValidator<DeleteDeveloperSuggestionCommand>
     {
-        public DeleteDeveloperSuggessionQueryValidator()
+        public DeleteDeveloperSuggestionQueryValidator()
         {
             RuleFor(x => x.Id)
                 .NotEmpty().WithMessage("Is required.")

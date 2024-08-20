@@ -9,7 +9,7 @@ namespace Application.AppDBContext
         public DbSet<Category> Categories { get; set; }
         public DbSet<CompressedImage> Images { get; set; }
         public DbSet<ConfigModel> Configs { get; set; }
-        public DbSet<DeveloperSuggession> DeveloperSuggessions { get; set; }
+        public DbSet<DeveloperSuggestion> DeveloperSuggestions { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
